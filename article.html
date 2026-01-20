@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <title>MUSE — Article</title>
+  <style>
+   .know-more {
+  width: 100%;
+  margin: 48px 0 16px;
+  padding-left: 24px;
+}
+
+
+.know-more a {
+  font-size: 13px;
+  color: #111;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.modal-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  border: 1px solid #111;
+  background: #fff;
+  cursor: pointer;
+}
+
+.modal-btn.continue {
+  background: none;
+  border: none;
+  font-size: 14px;
+  margin-top: 8px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.subscribe-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+}
+
+.subscribe-btn {
+  background: #000000;
+  color: #f6e9ec; /* same pink undertone as background */
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero {
+  width: 100vw;          /* FULL viewport width */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100vw;          /* FORCE full width */
+  height: auto;          /* Keep proportions */
+  display: block;
+}
+
+.site-header {
+  text-align: center;
+  padding: 16px;
+}
+
+.banner {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+    body {
+      margin: 0;
+      background: #ffffff; /* WHITE BACKGROUND */
+    }
+    .article {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    .slice {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 16px;
+    }
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 24px 0;
+  opacity: 0.6;
+}
+
+  </style>
+</head>
+<body>
+<header class="hero">
+  <a href="index.html">
+    <img src="banner.png" alt="MUSE banner">
+  </a>
+</header>
+<div class="subscribe-bar">
+  <button class="subscribe-btn" onclick="openModal(event)">
+    Subscribe Now
+  </button>
+</div>
+
+ <!-- REGISTRATION POPUP -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+
+    <video src="register.mp4" autoplay muted loop playsinline></video>
+
+    <p class="modal-title">Register Now:</p>
+
+    <button
+      class="modal-btn google"
+      onclick="window.open('https://forms.gle/EnJWH1Af3FAoDag47', '_blank')">
+      Subscribe with Email
+    </button>
+
+    <button
+      class="modal-btn continue"
+      onclick="continueWithoutRegistering()">
+      Continue Without Registering
+    </button>
+
+
+  </div>
+</div>
+
+<script>
+  function openModal(event) {
+    if (event) event.preventDefault();
+    document.getElementById("registerModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("registerModal").style.display = "none";
+    window.location.href = "article.html";
+  }
+
+  function continueWithoutRegistering() {
+    window.location.href = "article.html";
+  }
+</script>
+
+
+  <main class="article">
+    <img src="slice-1.png" class="slice" alt="">
+    <!-- add or remove slices as needed -->
+  </main>
+<div class="know-more">
+  <a href="about.html">Know More</a>
+</div>
+
+
+<footer>© MUSE</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

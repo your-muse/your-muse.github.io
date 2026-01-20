@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>About — Muse</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+   body {
+  font-family: "Playfair Display", Georgia, serif;
+  background: #f6e9ec;
+  color: #111;
+}
+
+
+    /* BANNER */
+    .hero {
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+    }
+    .hero a {
+  display: block;
+}
+
+
+    /* LAYOUT */
+  .about-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.4fr;
+  gap: 48px;
+}
+
+
+    /* IMAGE */
+   .about-image img {
+  width: 100%;
+  max-width: 280px;
+  margin-left: 16px;
+}
+
+
+    /* TEXT */
+    .about-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #222;
+}
+
+
+    .about-text a {
+  color: #111;
+  text-decoration: underline;
+}
+
+
+    /* FOOTER */
+    footer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 24px 0;
+      opacity: 0.6;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .about-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BANNER -->
+  <header class="hero">
+  <a href="index.html">
+    <img src="banner.png" alt="Muse banner">
+  </a>
+</header>
+
+  <!-- CONTENT -->
+  <section class="about-wrapper">
+
+    <div class="about-image">
+      <img src="founder picture.jpeg" alt="Founder of Muse">
+    </div>
+
+    <div class="about-text">
+      <p>
+        Hi,<br><br>
+        this is Nivedita, the Founder of Muse.
+        I am a student at the University of Delhi, studying computer science
+        and mathematics.
+      </p>
+
+      <p>
+        I am interested in pursuing a career in content curation and
+        front end development, so this is mine and my friends’ proof of
+        work in the fields we want to pursue.
+      </p>
+
+      <p>
+        Each section exhibits the respected member’s strength and
+        expertise.
+      </p>
+
+     <p>
+  If you’d like to know more about me:<br>
+  <strong>LinkedIn:</strong>
+  <a href="https://www.linkedin.com/in/nivedita-singh-somvanshi" target="_blank">Nivedita Singh Somvanshi</a>
+</p>
+
+<p>
+  If you want to be a part of Muse, contact me at:<br>
+  <strong>Email:</strong>
+  <a href="mailto:snivedita1507@gmail.com">Nivedita Singh</a>
+</p>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © MUSE
+  </footer>
+
+</body>
+</html>
+

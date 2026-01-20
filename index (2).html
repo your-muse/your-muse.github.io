@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <title>MUSE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    .know-more {
+  width: 100%;
+  margin: 48px 0 16px;
+  padding-left: 24px;
+}
+
+
+.know-more a {
+  font-size: 13px;
+  color: #111;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+
+    /* MODAL OVERLAY */
+/* MODAL OVERLAY */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* MODAL BOX */
+.modal-content {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  padding: 24px;
+  text-align: center;
+}
+
+/* VIDEO */
+.modal-content video {
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+/* MODAL TEXT */
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* MODAL BUTTONS */
+.modal-btn {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  border: 1px solid #111;
+  background: #fff;
+  cursor: pointer;
+}
+
+.modal-btn.google {
+  font-weight: 600;
+}
+
+.modal-btn.continue {
+  background: none;
+  border: none;
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Playfair Display", Georgia, serif;
+  background: #f6e9ec;
+  color: #111;
+}
+
+/* HERO */
+.hero {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.hero img {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+/* SUBSCRIBE BAR */
+.subscribe-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+}
+
+.subscribe-btn {
+  background: #000;
+  color: #f6e9ec;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* INTRO */
+.intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 96px 24px 64px;
+}
+
+.intro-text {
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.muse-word {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card h3 {
+  margin: 12px;
+  color: #111;
+}
+
+/* FOOTER */
+footer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  opacity: 0.6;
+}
+
+/* LINKS */
+a {
+  color: #111;
+  text-decoration: none;
+}
+
+    header {
+      padding:24px;
+      text-align:center;
+    }
+    header h1 {
+      letter-spacing:4px;
+      margin:0;
+    }
+  
+  </style>
+</head>
+<body>
+<header class="hero">
+  <a href="index.html">
+    <img src="banner.png" alt="MUSE banner">
+  </a> 
+</header>
+<div class="subscribe-bar">
+  <button  class="subscribe-btn" onclick="openModal(event)">
+    Subscribe Now
+  </button>
+</div>
+
+  <main>
+   <section class="intro">
+  <p class="intro-text">
+    Hi <span class="muse-word">Muse</span>,
+  </p>
+
+  <p>
+    This is the by product of a bunch of passionate college students’
+    talents coming together.
+  </p>
+
+  <p>
+    We have poured our hearts into designing this magazine because we believe
+    fashion has the deepest impact on the world, it quite literally
+    shapes society.
+  </p>
+
+  <p>
+    To emphasise this, we’ve put together our ideas in this website
+    which is now open for all to enjoy.
+  </p>
+</section>
+
+    <section class="grid">
+      <a class="card" href="article.html" onclick="openModal(event, 'article')">
+        <img src="thumb.png" alt="Article thumbnail">
+        <h3>Patriarchy Hidden as Witty Remark?</h3>
+      </a>
+    </section>
+  </main>
+<div class="know-more">
+  <a href="about.html">Know More</a>
+</div>
+
+
+  <footer>© MUSE</footer>
+<!-- REGISTRATION POPUP -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+
+    <video src="register.mp4" autoplay muted loop playsinline></video>
+
+    <p class="modal-title">Register Now:</p>
+   
+
+    <button
+      class="modal-btn google"
+      onclick="window.open('https://forms.gle/onyNcbw8WFsRd62L9', '_blank')">
+      Subscribe with Email
+    </button>
+
+    <button
+      class="modal-btn continue"
+      onclick="continueWithoutRegistering()">
+      Continue Without Registering
+    </button>
+
+  </div>
+</div>
+ 
+
+<script>
+ let modalSource = "index";
+
+function openModal(event, source = "index") {
+  if (event) event.preventDefault();
+  modalSource = source;
+  document.getElementById("registerModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("registerModal").style.display = "none";
+  if (modalSource === "article") {
+    window.location.href = "article.html";
+  }
+}
+
+function continueWithoutRegistering() {
+  document.getElementById("registerModal").style.display = "none";
+
+  if (modalSource === "article") {
+    window.location.href = "article.html";
+  }
+  // if source is index, do nothing (stay on cover page)
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
