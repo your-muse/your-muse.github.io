@@ -281,4 +281,23 @@
 
   </div>
 </div>
+  <script>
+  let modalTarget = null;
+
+  function openModal(event, target) {
+    if (event) event.preventDefault();
+    modalTarget = target;
+    document.getElementById("registerModal").style.display = "flex";
+  }
+
+  function continueWithoutRegistering() {
+    document.getElementById("registerModal").style.display = "none";
+
+    if (modalTarget === "literary") {
+      window.location.href = "literary-1.html";
+    }
+  }
+</script>
+
 </body>
+</html>
