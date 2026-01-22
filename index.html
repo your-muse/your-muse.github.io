@@ -154,19 +154,22 @@ body {
 }
 
 .card {
-  background: #fff;
-  border: 1px solid #ddd;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 32px;
 }
 
-.card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 
 .card h3 {
-  margin: 12px;
-  color: #111;
+  font-size: 26px;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.card h3:hover {
+  text-decoration: underline;
 }
 
 /* FOOTER */
@@ -233,8 +236,7 @@ a {
 
     <section class="grid">
       <a class="card" href="article.html" onclick="openModal(event, 'article')">
-        <img src="thumb.png" alt="Article thumbnail">
-        <h3>Patriarchy Hidden as Witty Remark?</h3>
+        <h3>Is Having A Boyfriend Embarrassing Now?</h3>
       </a>
     </section>
   </main>
@@ -297,6 +299,7 @@ function continueWithoutRegistering() {
 </script>
 </body>
 </html>
+
 
 
 
