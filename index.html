@@ -303,33 +303,30 @@ a {
  
 
 <script>
- let modalSource = "index";
+  let modalTarget = null;
 
-function openModal(event, source = "index") {
-  if (event) event.preventDefault();
-  modalSource = source;
-  document.getElementById("registerModal").style.display = "flex";
-}
-
-function closeModal() {
-  document.getElementById("registerModal").style.display = "none";
-  if (modalSource === "article") {
-    window.location.href = "article.html";
+  function openModal(event, target) {
+    if (event) event.preventDefault();
+    modalTarget = target;
+    document.getElementById("registerModal").style.display = "flex";
   }
-}
 
-function continueWithoutRegistering() {
-  document.getElementById("registerModal").style.display = "none";
+  function continueWithoutRegistering() {
+    document.getElementById("registerModal").style.display = "none";
 
-  if (modalSource === "article") {
-    window.location.href = "article.html";
+    if (modalTarget === "article") {
+      window.location.href = "article.html";
+    }
+
+    if (modalTarget === "literary") {
+      window.location.href = "literary-1.html";
+    }
   }
-  // if source is index, do nothing (stay on cover page)
-}
-
 </script>
+
 </body>
 </html>
+
 
 
 
