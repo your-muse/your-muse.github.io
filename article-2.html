@@ -56,7 +56,7 @@
 
     .article-image img {
       width: 100%;
-      margin-bottom: 56px;
+      display: block;
     }
 
     .article-text p {
@@ -68,7 +68,7 @@
 
     /* ---------- KNOW MORE ---------- */
     .know-more {
-      margin-top: 56px;
+      margin-top: 40px;
     }
 
     .know-more a {
@@ -151,15 +151,15 @@
 
 <!-- SUBSCRIBE -->
 <div class="subscribe-bar">
-  <button class="subscribe-btn" onclick="openModal(event)">Subscribe Now</button>
+  <button class="subscribe-btn" onclick="openModal(event)">
+    Subscribe Now
+  </button>
 </div>
 
 <!-- ARTICLE -->
 <main class="article-wrapper">
-  <img src="slice-2.png" alt="Manchild article">
-  <div class="know-more">
-    <a href="about.html">Know More</a>
-  </div>
+
+  <img src="slice-2.png" alt="Manchild article" class="article-image">
 
   <div class="know-more">
     <a href="about.html">Know More</a>
@@ -167,6 +167,7 @@
 
 </main>
 
+<!-- FOOTER -->
 <footer>© MUSE</footer>
 
 <!-- MODAL -->
