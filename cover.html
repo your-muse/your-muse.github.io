@@ -94,11 +94,54 @@
   <div class="cover-container">
     <img src="Retro.png" alt="Muse Cover" class="cover-image">
   </div>
-
+<div class="know-more">
+  <a href="about.html">Know More</a>
+</div>
+</main>
   <!-- Footer -->
   <footer>
     © MUSE
   </footer>
+  
+  <div id="registerModal" class="modal">
+  <div class="modal-content">
+
+    <video src="register.mp4" autoplay muted loop playsinline></video>
+
+    <p class="modal-title">Register Now:</p>
+   
+
+    <button
+      class="modal-btn google"
+      onclick="window.open('https://forms.gle/onyNcbw8WFsRd62L9', '_blank')">
+      Subscribe with Email
+    </button>
+
+    <button
+      class="modal-btn continue"
+      onclick="continueWithoutRegistering()">
+      Continue Without Registering
+    </button>
+
+  </div>
+</div>
+  <script>
+  let modalTarget = null;
+
+  function openModal(event, target) {
+    if (event) event.preventDefault();
+    modalTarget = target;
+    document.getElementById("registerModal").style.display = "flex";
+  }
+
+  function continueWithoutRegistering() {
+    document.getElementById("registerModal").style.display = "none";
+
+    if (modalTarget === "literary") {
+      window.location.href = "literary-1.html";
+    }
+  }
+</script>
 
 </body>
 </html>
