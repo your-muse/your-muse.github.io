@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MUSE — Cover</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #f7ecec; /* same soft pink tone */
+      font-family: Georgia, "Times New Roman", serif;
+      color: #111;
+    }
+
+    /* Home link */
+    .home-link {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #555;
+      z-index: 50;
+    }
+
+    .home-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Subscribe button */
+    .subscribe-btn {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      background: black;
+      color: #f7ecec;
+      border: none;
+      padding: 8px 14px;
+      font-size: 12px;
+      cursor: pointer;
+      z-index: 50;
+    }
+
+    /* Main content */
+    .cover-container {
+      max-width: 900px;
+      margin: 120px auto 80px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+
+    .cover-image {
+      width: 100%;
+      max-width: 720px;   /* matches article-1 image scale */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .cover-container {
+        margin-top: 100px;
+      }
