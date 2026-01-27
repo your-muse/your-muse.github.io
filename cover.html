@@ -7,6 +7,24 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
+    .top-strip {
+  width: 100%;
+  background: #ffffff;
+  padding: 14px 48px;
+  box-sizing: border-box;
+}
+
+.home-strip {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration: none;
+}
+
+.home-strip:hover {
+  text-decoration: underline;
+}
     body {
       margin: 0;
       background-color:  #f6e9ec;
@@ -32,7 +50,7 @@
     /* Subscribe button */
     .subscribe-btn {
       position: fixed;
-      top: 18px;
+      top: 36px;
       right: 18px;
       background: #000;
       color: #f6e9ec;
@@ -137,6 +155,10 @@
 </head>
 
 <body>
+  <div class="top-strip">
+  <a href="index.html" class="home-strip">HOME</a>
+</div>
+
 
   <!-- Home -->
   <a href="index.html" class="home-link">Home</a>
