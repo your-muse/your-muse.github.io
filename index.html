@@ -9,22 +9,54 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    .social-links {
-  display: flex;
+    /* ------SOCIAL LINKS------- */
+.social-links {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px 0;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 24px;
-  margin: 32px 0 16px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f6e9ec;
+  margin: 0 0.25cm;
+  border: 1px solid #ddd;
+  transition: all 0.35s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+  fill: #111;
 }
 
 .social-links img {
   width: 20px;
   height: 20px;
-  opacity: 0.65;
-  transition: opacity 0.2s ease;
+  filter: brightness(0);
+}
+/* -----DIVIDER----- */
+.divider {
+  width: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 30px auto 20px;
+  animation: growLine 1.2s ease forwards;
 }
 
-.social-links img:hover {
-  opacity: 1;
+@keyframes growLine {
+  from { width: 0; }
+  to { width: 60%; }
 }
 
     .cover-strip {
@@ -149,7 +181,8 @@
     .know-more {
       max-width: 1100px;
       margin: 48px auto 16px;
-      padding-left: 32px;
+      padding: 0;
+      text-align: center;
 }
 
 
@@ -157,6 +190,7 @@
       font-size: 13px;
       opacity: 0.7;
       text-decoration: none;
+      text-transform: capitalize;
       color: #111;
     }
 
@@ -301,7 +335,7 @@
 <div class="know-more">
   <a href="about.html">Know More</a>
 </div>
-
+ <div class="divider"></div>
   <div class="social-links">
   <a href="https://www.instagram.com/yourmusemagazine/" target="_blank" aria-label="Instagram">
     <img src="instagram.svg" alt="Instagram">
@@ -359,7 +393,6 @@
 
 </body>
 </html>
-
 
 
 
