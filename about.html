@@ -39,6 +39,7 @@
   .about-wrapper {
   max-width: 1100px;
   margin: 0 auto;
+  margin-bottom: 40px;
   padding: 80px 24px;
   display: grid;
   grid-template-columns: 0.8fr 1.4fr;
@@ -66,6 +67,19 @@
   color: #111;
   text-decoration: underline;
 }
+    /* DIVIDER */
+.divider {
+  width: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 30px auto 20px;
+  animation: growLine 1.2s ease forwards;
+}
+
+@keyframes growLine {
+  from { width: 0; }
+  to { width: 60%; }
+}
 
 
     /* FOOTER */
@@ -87,6 +101,8 @@
         max-width: 100%;
       }
     }
+   
+
   </style>
 </head>
 
@@ -110,18 +126,18 @@
       <p>
         Hi,<br><br>
         this is Nivedita, the Founder of Muse.
-        I am a student at the University of Delhi, studying computer science
-        and mathematics.
+        I am currently pursuing a degree in Computer Science and Mathematics at the University of Delhi. 
+        My academic interests lie at the intersection of technology, media, and culture — particularly in content curation and front-end development.
       </p>
 
       <p>
-        I am interested in pursuing a career in content curation and
-        front end development, so this is my proof of
-        work in the fields I want to pursue.
+       Muse was conceptualized as a collaborative platform that reflects both creative and technical ambition. 
+      It serves as a working portfolio for a collective of driven students, each contributing within their area of strength — from editorial direction and visual design to development and strategy.
       </p>
 
       <p>
-        Each section exhibits various roles I could contribute to.
+        Through Muse, we aim to explore fashion, commentary, and culture in a way that is intentional, analytical, and creatively expressive.
+        Every section of the publication is designed to showcase not only aesthetic sensibility, but also structured thought and execution.
       </p>
 
      <p>
@@ -139,6 +155,37 @@
     </div>
 
   </section>
+  <div class="divider"></div>
+ <section class="about-wrapper">
+
+    <div class="about-image">
+      <img src="Front-end.png" alt="Front-end Developer">
+    </div>
+
+    <div class="about-text">
+
+            <p>
+                Hi, I’m Sakshi, a Computer Applications and Mathematics student at the University of Delhi and a Frontend Developer at Muse.
+            </p>
+
+            <p>
+                I enjoy transforming ideas into clean, responsive, and structured digital experiences. With a background in data analytics and analytical thinking, I approach development with precision, logic, and attention to detail.
+            </p>
+
+            <p>
+                At Muse, I aim to merge creativity with functionality — building interfaces that are both visually compelling and thoughtfully executed.
+            </p>
+
+        <p>
+  If you’d like to know more about me:<br>
+  <strong>LinkedIn:</strong>
+  <a href="https://www.linkedin.com/in/sakshi-936b12329/" target="_blank">Sakshi </a>
+</p>
+
+        </div>
+
+</section>
+
 
   <footer>
     © MUSE
