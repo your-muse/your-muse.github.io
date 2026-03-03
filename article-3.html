@@ -3,265 +3,215 @@
 <head>
   <meta name="description" content="A cultural critique on image policing and modern relationships.">
   <meta property="og:title" content="Is Having A Boyfriend Embarrassing Now? — Muse" />
-<meta property="og:description" content="A cultural critique on image policing and modern relationships." />
+  <meta property="og:description" content="A cultural critique on image policing and modern relationships." />
   <meta property="og:image" content="https://your-muse.github.io/banner.png" />
-<meta property="og:type" content="website" />
+  <meta property="og:type" content="website" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
- <title>Is Having A Boyfriend Embarrassing Now? | Muse</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Is Having A Boyfriend Embarrassing Now? | Muse</title>
   <style>
 
     /*---know more---*/
-   .know-more{
-    max-width: 1100px;
-    margin: 48px auto 16px;
-    padding: 0;
-    text-align: center;
-}
+    .know-more {
+      max-width: 1100px;
+      margin: 48px auto 16px;
+      padding: 0;
+      text-align: center;
+    }
 
-.know-more a {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-  text-decoration: none;
-  color: #111;
-  opacity: 0.6;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
+    .know-more a {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: lowercase;
+      text-decoration: none;
+      color: #111;
+      opacity: 0.6;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
 
-.know-more a:hover {
-  opacity: 1;
-}
+    .know-more a:hover { opacity: 1; }
 
-/* DIVIDER */
-.divider {
-  width: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 30px auto 20px;
-  animation: growLine 1.2s ease forwards;
-}
+    /* DIVIDER */
+    .divider {
+      width: 0;
+      height: 1px;
+      background: #ddd;
+      margin: 30px auto 20px;
+      animation: growLine 1.2s ease forwards;
+    }
 
-@keyframes growLine {
-  from { width: 0; }
-  to { width: 60%; }
-}
+    @keyframes growLine {
+      from { width: 0; }
+      to { width: 60%; }
+    }
 
-/* SOCIAL LINKS */
-.social-links {
-  text-align: center;
-  margin: 20px auto;
-  padding: 10px 0;
-}
+    /* SOCIAL LINKS */
+    .social-links {
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px 0;
+    }
 
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #ffffff;
-  margin: 0 0.25cm;
-  border: 1px solid #ddd;
-  transition: all 0.35s ease;
-}
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:#f6e9ec;
+      margin: 0 0.25cm;
+      border: 1px solid #ddd;
+      transition: all 0.35s ease;
+    }
 
-.social-links a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 12px rgba(0,0,0,0.15);
-}
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
 
-.social-links svg {
-  width: 20px;
-  height: 20px;
-  fill: #111;
-}
+    .social-links svg { width: 20px; height: 20px; fill: #111; }
+    .social-links img { width: 20px; height: 20px; filter: brightness(0); }
+/*--modal---*/
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
 
-.social-links img {
-  width: 20px;
-  height: 20px;
-  filter: brightness(0);
-}
+    .modal-content {
+      background: #ffffff;
+      width: 90%;
+      max-width: 420px;
+      padding: 24px;
+      text-align: center;
+      position: relative;
+    }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
+    .modal-content video { width: 100%; height: auto; margin-bottom: 16px; }
+    .modal-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
 
-.modal-content {
-  background: #ffffff;
-  width: 90%;
-  max-width: 420px;
-  padding: 24px;
-  text-align: center;
-  position: relative;
-}
+    .modal-btn {
+      width: 100%; padding: 12px; margin-bottom: 12px;
+      font-size: 16px; border: 1px solid #111;
+      background: #fff; cursor: pointer;
+    }
 
-.modal-content video {
-  width: 100%;
-  height: auto;
-  margin-bottom: 16px;
-}
+    .modal-btn.continue {
+      background: none; border: none;
+      font-size: 14px; margin-top: 8px;
+      text-decoration: underline; cursor: pointer;
+    }
 
-.modal-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
+    /*---subscribe---*/
+    .subscribe-bar { display: flex; justify-content: flex-end; padding: 16px 24px; }
 
-.modal-btn {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  font-size: 16px;
-  border: 1px solid #111;
-  background: #fff;
-  cursor: pointer;
-}
+    .subscribe-btn {
+      background: #000000;
+      color: #f6e9ec;
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-.modal-btn.continue {
-  background: none;
-  border: none;
-  font-size: 14px;
-  margin-top: 8px;
-  text-decoration: underline;
-  cursor: pointer;
-}
+    /*-- BANNER / HOME --*/
+    .hero { width: 100vw; margin: 0; padding: 0; overflow: hidden; }
+    .hero img { width: 100vw; height: auto; display: block; }
 
-.subscribe-bar {
-  display: flex;
-  justify-content: flex-end;
-  padding: 16px 24px;
-}
-
-.subscribe-btn {
-  background: #000000;
-  color: #f6e9ec; /* same pink undertone as background */
-  border: none;
-  padding: 10px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.hero {
-  width: 100vw;          /* FULL viewport width */
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100vw;          /* FORCE full width */
-  height: auto;          /* Keep proportions */
-  display: block;
-}
-
-.site-header {
-  text-align: center;
-  padding: 16px;
-}
-
-.banner {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
+    .site-header { text-align: center; padding: 16px; }
+    .banner { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 
     body {
+      font-family: "Playfair Display", Georgia, serif;
       margin: 0;
-      background: #f6e9ec; /* WHITE BACKGROUND */
+      background: #f6e9ec;
     }
-    .article {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 16px;
+
+    .article { max-width: 900px; margin: 0 auto; padding: 16px; }
+    .slice { max-width: 100%; height: auto; display: block; margin-bottom: 0; }
+
+    /* ARTICLE ACTIONS — */
+    .article-actions {
+      display: flex;
+      justify-content: flex-start;
+      gap: 28px;
+      margin-top: 20px;
     }
-    .slice {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 0;
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #5f6267;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      opacity: 0.85;
+      padding: 0;
     }
-footer {
-  width: 100%;
-  text-align: center;
-  padding: 24px 0;
-  opacity: 0.6;
-}
+
+    .icon-btn:hover { opacity: 1; transform: translateY(-2px); }
+    .icon-btn.active { color: #373737; }
+
+   /* ---------- FOOTER ---------- */
+    footer {
+      width: 100%;
+      text-align: center;
+      padding: 24px 0;
+      opacity: 0.6;
+    }
 
   </style>
 </head>
 <body>
+
 <header class="hero">
   <a href="index.html">
     <img src="banner.png" alt="MUSE banner">
   </a>
 </header>
+
 <div class="subscribe-bar">
-  <button class="subscribe-btn" onclick="openModal(event)">
-    Subscribe Now
-  </button>
+  <button class="subscribe-btn" onclick="openModal(event)">Subscribe Now</button>
 </div>
 
- <!-- REGISTRATION POPUP -->
+<!-- REGISTRATION POPUP -->
 <div id="registerModal" class="modal">
   <div class="modal-content">
-
     <video src="register.mp4" autoplay muted loop playsinline></video>
-
     <p class="modal-title">Register Now:</p>
-
-    <button
-      class="modal-btn google"
-      onclick="window.open('https://forms.gle/EnJWH1Af3FAoDag47', '_blank')">
-      Subscribe with Email
-    </button>
-
-    <button
-      class="modal-btn continue"
-      onclick="continueWithoutRegistering()">
-      Continue Without Registering
-    </button>
-
-
+    <button class="modal-btn google" onclick="window.open('https://forms.gle/EnJWH1Af3FAoDag47', '_blank')">Subscribe with Email</button>
+    <button class="modal-btn continue" onclick="continueWithoutRegistering()">Continue Without Registering</button>
   </div>
 </div>
 
-<script>
-  function openModal(event) {
-    if (event) event.preventDefault();
-    document.getElementById("registerModal").style.display = "flex";
-  }
+<main class="article">
+  <img src="article-3.png" class="slice" alt="">
 
-  function closeModal() {
-    document.getElementById("registerModal").style.display = "none";
-    window.location.href = "article-3.html";
-  }
+  <!-- SHARE / LIKE / DISLIKE -->
+  <div class="article-actions">
+    <button class="icon-btn" onclick="sharePost()">
+      <i class="fa-solid fa-share-nodes"></i>
+    </button>
+    <button class="icon-btn" onclick="toggleLike(this)">
+      <i class="fa-regular fa-thumbs-up"></i>
+    </button>
+    <button class="icon-btn" onclick="toggleDislike(this)">
+      <i class="fa-regular fa-thumbs-down"></i>
+    </button>
+  </div>
+</main>
 
-  function continueWithoutRegistering() {
-    window.location.href = "article-3.html";
-  }
-</script>
-
-
-  <main class="article">
-    <img src="article-3.png" class="slice" alt="">
-    <!-- add or remove slices as needed -->
-  </main>
 <div class="know-more">
   <a href="about.html">Know More</a>
 </div>
@@ -278,37 +228,52 @@ footer {
   </a>
 </div>
 
-
 <footer>© MUSE</footer>
+
+<script>
+  function openModal(event) {
+    if (event) event.preventDefault();
+    document.getElementById("registerModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("registerModal").style.display = "none";
+    window.location.href = "article-3.html";
+  }
+
+  function continueWithoutRegistering() {
+    window.location.href = "article-3.html";
+  }
+
+  function toggleLike(btn) {
+    const dislikeBtn = document.querySelectorAll('.icon-btn')[2];
+    btn.classList.toggle("active");
+    btn.querySelector("i").classList.toggle("fa-regular");
+    btn.querySelector("i").classList.toggle("fa-solid");
+    dislikeBtn.classList.remove("active");
+    dislikeBtn.querySelector("i").classList.remove("fa-solid");
+    dislikeBtn.querySelector("i").classList.add("fa-regular");
+  }
+
+  function toggleDislike(btn) {
+    const likeBtn = document.querySelectorAll('.icon-btn')[1];
+    btn.classList.toggle("active");
+    btn.querySelector("i").classList.toggle("fa-regular");
+    btn.querySelector("i").classList.toggle("fa-solid");
+    likeBtn.classList.remove("active");
+    likeBtn.querySelector("i").classList.remove("fa-solid");
+    likeBtn.querySelector("i").classList.add("fa-regular");
+  }
+
+  function sharePost() {
+    if (navigator.share) {
+      navigator.share({ title: document.title, url: window.location.href });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Link copied.");
+    }
+  }
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

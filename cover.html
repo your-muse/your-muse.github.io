@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta property="og:title" content="Muse — Cover Issue">
-<meta property="og:description" content="The first cover of MUSE.">
+  <meta property="og:description" content="The first cover of MUSE.">
   <meta property="og:image" content="https://your-muse.github.io/Retro.png" />
-<meta property="og:url" content="https://your-muse.github.io/cover.html" />
-<meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-muse.github.io/cover.html" />
+  <meta property="og:type" content="website" />
   <title>MUSE — Cover</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     .top-strip {
-  width: 100%;
-  background: #ffffff;
-  padding: 14px 48px;
-  box-sizing: border-box;
-  text-align: center;
-}
+      width: 100%;
+      background: #ffffff;
+      padding: 14px 48px;
+      box-sizing: border-box;
+      text-align: center;
+    }
 
-.home-strip {
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #111;
-  text-decoration: none;
-}
+    .home-strip {
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #111;
+      text-decoration: none;
+    }
 
-.home-strip:hover {
-  text-decoration: underline;
-}
+    .home-strip:hover { text-decoration: underline; }
+
     body {
       margin: 0;
-      background-color:  #f6e9ec;
+      background-color: #f6e9ec;
       font-family: Georgia, "Times New Roman", serif;
       color: #111;
     }
 
-    /* Home link */
     .home-link {
       position: fixed;
       top: 18px;
@@ -49,26 +48,20 @@
       z-index: 50;
     }
 
-    .home-link:hover {
-      text-decoration: underline;
-    }
+    .home-link:hover { text-decoration: underline; }
 
-    /* Subscribe button */
+    .subscribe-bar { display: flex; justify-content: flex-end; padding: 16px 24px; }
+
     .subscribe-btn {
-      position: fixed;
-      top: 64px;
-      right: 18px;
-      background: #000;
+      background: #000000;
       color: #f6e9ec;
       border: none;
       padding: 10px 18px;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
-      z-index: 50;
     }
 
-    /* Cover image */
     .cover-container {
       max-width: 1100px;
       margin: 120px auto 48px;
@@ -77,27 +70,95 @@
     }
 
     .cover-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
-
-    /* Know more */
-    .know-more {
-      margin-top: 32px;
-      text-align: left;
+       .know-more {
+      max-width: 1100px;
+      margin: 48px auto 16px;
+      padding: 0;
+      text-align: center;
     }
 
     .know-more a {
-      font-size: 13px;
-      color: #111;
-      opacity: 0.7;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: lowercase;
       text-decoration: none;
+      color: #111;
+      opacity: 0.6;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
     }
 
-    /* Footer */
+    .know-more a:hover { opacity: 1; }
+
+    .divider {
+      width: 0;
+      height: 1px;
+      background: #ddd;
+      margin: 30px auto 20px;
+      animation: growLine 1.2s ease forwards;
+    }
+
+    @keyframes growLine {
+      from { width: 0; }
+      to { width: 60%; }
+    }
+
+    .social-links {
+      text-align: center;
+      margin: 20px auto;
+      padding: 10px 0;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background:#f6e9ec;
+      margin: 0 0.25cm;
+      border: 1px solid #ddd;
+      transition: all 0.35s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+
+    .social-links svg { width: 20px; height: 20px; fill: #111; }
+    .social-links img { width: 20px; height: 20px; filter: brightness(0); }
+
+
+    /* ARTICLE ACTIONS */
+    .article-actions {
+      display: flex;
+      justify-content: flex-start;
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      font-size: 15px;
+      color: #5f6267;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      opacity: 0.85;
+      padding: 0;
+    }
+
+    .icon-btn:hover { opacity: 1; transform: translateY(-2px); }
+    .icon-btn.active { color: #373737; }
+
     footer {
       text-align: center;
       font-size: 14px;
@@ -105,7 +166,6 @@
       margin: 40px 0 30px;
     }
 
-    /* Modal */
     .modal {
       position: fixed;
       inset: 0;
@@ -124,16 +184,8 @@
       text-align: center;
     }
 
-    .modal-content video {
-      width: 100%;
-      margin-bottom: 16px;
-    }
-
-    .modal-title {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
+    .modal-content video { width: 100%; margin-bottom: 16px; }
+    .modal-title { font-size: 20px; font-weight: 600; margin-bottom: 16px; }
 
     .modal-btn {
       width: 100%;
@@ -153,51 +205,61 @@
     }
 
     @media (max-width: 768px) {
-      .cover-container {
-        margin-top: 100px;
-      }
+      .cover-container { margin-top: 100px; }
     }
   </style>
 </head>
 
 <body>
-   <!-- Home -->
+
   <div class="top-strip">
-  <a href="index.html" class="home-strip">HOME</a>
+    <a href="index.html" class="home-strip">HOME</a>
+  </div>
+
+ <div class="subscribe-bar">
+  <button class="subscribe-btn" onclick="openModal(event)">Subscribe Now</button>
 </div>
 
-  <!-- Subscribe -->
-  <button class="subscribe-btn" onclick="openModal(event)">
-    Subscribe Now
-  </button>
-
-  <!-- Cover -->
   <div class="cover-container">
     <img src="Retro.png" alt="Muse Cover" class="cover-image">
 
-    <div class="know-more">
-      <a href="about.html">Know More</a>
+    <!-- SHARE / LIKE / DISLIKE -->
+    <div class="article-actions">
+      <button class="icon-btn" onclick="sharePost()">
+        <i class="fa-solid fa-share-nodes"></i>
+      </button>
+      <button class="icon-btn" onclick="toggleLike(this)">
+        <i class="fa-regular fa-thumbs-up"></i>
+      </button>
+      <button class="icon-btn" onclick="toggleDislike(this)">
+        <i class="fa-regular fa-thumbs-down"></i>
+      </button>
     </div>
-  </div>
 
-  <!-- Footer -->
+    <div class="know-more">
+  <a href="about.html">Know More</a>
+</div>
+<div class="divider"></div>
+
+<div class="social-links">
+  <a href="https://www.instagram.com/yourmusemagazine/" target="_blank">
+    <img src="instagram.svg" alt="Instagram">
+  </a>
+  <a href="https://www.linkedin.com/company/muse-editorial-project/about/?viewAsMember=true" target="_blank">
+    <svg viewBox="0 0 24 24">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.266 2.37 4.266 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM6.814 20.452H3.86V9h2.954v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
+    </svg>
+  </a>
+</div>
+
   <footer>© MUSE</footer>
 
-  <!-- Modal -->
   <div id="registerModal" class="modal">
     <div class="modal-content">
       <video src="register.mp4" autoplay muted loop playsinline></video>
-
       <p class="modal-title">Register Now:</p>
-
-      <button class="modal-btn"
-        onclick="window.open('https://forms.gle/onyNcbw8WFsRd62L9','_blank')">
-        Subscribe with Email
-      </button>
-
-      <button class="modal-btn continue" onclick="closeModal()">
-        Continue Without Registering
-      </button>
+      <button class="modal-btn" onclick="window.open('https://forms.gle/onyNcbw8WFsRd62L9','_blank')">Subscribe with Email</button>
+      <button class="modal-btn continue" onclick="closeModal()">Continue Without Registering</button>
     </div>
   </div>
 
@@ -209,6 +271,35 @@
 
     function closeModal() {
       document.getElementById("registerModal").style.display = "none";
+    }
+
+    function toggleLike(btn) {
+      const dislikeBtn = document.querySelectorAll('.icon-btn')[2];
+      btn.classList.toggle("active");
+      btn.querySelector("i").classList.toggle("fa-regular");
+      btn.querySelector("i").classList.toggle("fa-solid");
+      dislikeBtn.classList.remove("active");
+      dislikeBtn.querySelector("i").classList.remove("fa-solid");
+      dislikeBtn.querySelector("i").classList.add("fa-regular");
+    }
+
+    function toggleDislike(btn) {
+      const likeBtn = document.querySelectorAll('.icon-btn')[1];
+      btn.classList.toggle("active");
+      btn.querySelector("i").classList.toggle("fa-regular");
+      btn.querySelector("i").classList.toggle("fa-solid");
+      likeBtn.classList.remove("active");
+      likeBtn.querySelector("i").classList.remove("fa-solid");
+      likeBtn.querySelector("i").classList.add("fa-regular");
+    }
+
+    function sharePost() {
+      if (navigator.share) {
+        navigator.share({ title: document.title, url: window.location.href });
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert("Link copied.");
+      }
     }
   </script>
 
