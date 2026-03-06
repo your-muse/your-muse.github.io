@@ -150,6 +150,33 @@
       width: 360px;
     }
 
+   /* Article card */
+
+.article-card{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+    margin-bottom:32px;
+}
+
+
+/* Image strip */
+
+.article-image{
+    width:100%;
+    height:70px;
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+.article-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+
     /* ---------- INTRO ---------- */
     .intro-column p {
       margin: 0 0 16px;
@@ -332,6 +359,9 @@
   <div class="entry">
     <div class="section-label">Articles</div>
      <div class="title-divider"></div>
+   <div class="article-image">
+        <img src="article preview.jpeg" alt="Article preview">
+    </div>
 
     <a href="article.html" onclick="openModal(event, 'article')">
       Why Are We Emotionally Unavailable to TV Shows?
@@ -339,10 +369,16 @@
    
 
     <br><br>
+   <div class="article-image">
+        <img src="article preview.jpeg" alt="Article preview">
+    </div>
    <a href="article-3.html" onclick="openModal(event, 'article-3')">
       Is Having A Boyfriend Embarrassing Now?
     </a>
    <br><br>
+   <div class="article-image">
+        <img src="article preview.jpeg" alt="Article preview">
+    </div>
 
     <a href="article-2.html" onclick="openModal(event, 'article-2')">
       A Manchild Isn't the Worst
@@ -430,3 +466,4 @@
 </body>
 
 </html>
+
