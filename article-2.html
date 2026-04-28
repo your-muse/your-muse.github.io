@@ -215,6 +215,48 @@
     }
   }
 </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabase = window.supabase.createClient(
+  "https://brhvefwrpmstpujslhei.supabase.co",
+  "sb_publishable_0JjjCWLxQ0QBJi0_CKyZzQ_zPhUtikL"
+);
+
+const ARTICLE_ID = "article-2"; // change per page
+
+async function loadLikes() {
+  const { data } = await supabase
+    .from("Likes")
+    .select("likes_count")
+    .eq("article_id", ARTICLE_ID)
+    .single();
+
+  if (data) {
+    document.getElementById("like-count").innerText = data.likes_count;
+  }
+}
+
+async function toggleLike(btn) {
+  let countEl = document.getElementById("like-count");
+  let current = parseInt(countEl.innerText);
+
+  const { data } = await supabase
+    .from("Likes")
+    .update({ likes_count: current + 1 })
+    .eq("article_id", ARTICLE_ID)
+    .select()
+    .single();
+
+  if (data) {
+    countEl.innerText = data.likes_count;
+  }
+
+  btn.classList.add("active");
+}
+
+window.onload = loadLikes;
+</script>
 
 </body>
 </html>
