@@ -219,16 +219,7 @@
     document.getElementById("registerModal").style.display = "none";
   }
 
-  function toggleLike(btn) {
-    const dislikeBtn = document.querySelectorAll('.icon-btn')[2];
-    btn.classList.toggle("active");
-    btn.querySelector("i").classList.toggle("fa-regular");
-    btn.querySelector("i").classList.toggle("fa-solid");
-    dislikeBtn.classList.remove("active");
-    dislikeBtn.querySelector("i").classList.remove("fa-solid");
-    dislikeBtn.querySelector("i").classList.add("fa-regular");
-  }
-
+  
   function toggleDislike(btn) {
     const likeBtn = document.querySelectorAll('.icon-btn')[1];
     btn.classList.toggle("active");
