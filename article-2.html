@@ -260,26 +260,33 @@ async function loadLikes() {
     document.getElementById("like-count").innerText = data.likes_count;
   }
 }
-
 async function handleLike(btn) {
-  let countEl = document.getElementById("like-count");
-  let current = parseInt(countEl.innerText);
+  // Prevent double-clicking
+  if (btn.classList.contains("active")) return;
+  btn.classList.add("active");
 
-  const { data } = await supabase
+  let countEl = document.getElementById("like-count");
+  let current = parseInt(countEl.innerText) || 0;
+
+  // Optimistic update — show immediately
+  countEl.innerText = current + 1;
+
+  const { data, error } = await supabase
     .from("Likes")
     .update({ likes_count: current + 1 })
     .eq("article_id", ARTICLE_ID)
     .select()
     .single();
 
-  if (data) {
+  if (error || !data) {
+    // Rollback on failure
+    countEl.innerText = current;
+    btn.classList.remove("active");
+    console.error("Like update failed:", error);
+  } else {
     countEl.innerText = data.likes_count;
   }
-
-  btn.classList.add("active");
 }
-
-document.addEventListener("DOMContentLoaded", loadLikes);
 </script>
 
 </body>
