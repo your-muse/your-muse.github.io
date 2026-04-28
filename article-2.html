@@ -64,12 +64,25 @@
 
     .icon-btn:hover { opacity: 1; transform: translateY(-2px); }
     .icon-btn.active { color: #373737; }
-    .like-container {
+.article-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.like-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
 }
+
+.like-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 #like-count {
   font-size: 12px;
@@ -148,12 +161,13 @@
 
   <!-- SHARE / LIKE / DISLIKE -->
 <div class="article-actions">
+
   <button class="icon-btn" onclick="sharePost()">
     <i class="fa-solid fa-share-nodes"></i>
   </button>
 
   <div class="like-container">
-    <button class="icon-btn" onclick="handleLike(this)">
+    <button class="icon-btn like-btn" onclick="handleLike(this)">
       <i class="fa-regular fa-thumbs-up"></i>
     </button>
     <span id="like-count">0</span>
@@ -162,7 +176,9 @@
   <button class="icon-btn" onclick="toggleDislike(this)">
     <i class="fa-regular fa-thumbs-down"></i>
   </button>
+
 </div>
+  
   
   <div class="know-more">
     <a href="about.html">Know More</a>
