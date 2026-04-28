@@ -147,22 +147,22 @@
   <img src="article-2.png" alt="Manchild article" class="article-image">
 
   <!-- SHARE / LIKE / DISLIKE -->
- <div class="article-actions">
+<div class="article-actions">
   <button class="icon-btn" onclick="sharePost()">
     <i class="fa-solid fa-share-nodes"></i>
   </button>
 
-  <button class="icon-btn" onclick="handleLike(this)">
-    <i class="fa-regular fa-thumbs-up"></i>
-  </button>
-
-  <span id="like-count">0</span>
+  <div class="like-container">
+    <button class="icon-btn" onclick="handleLike(this)">
+      <i class="fa-regular fa-thumbs-up"></i>
+    </button>
+    <span id="like-count">0</span>
+  </div>
 
   <button class="icon-btn" onclick="toggleDislike(this)">
     <i class="fa-regular fa-thumbs-down"></i>
   </button>
 </div>
-
   
   <div class="know-more">
     <a href="about.html">Know More</a>
