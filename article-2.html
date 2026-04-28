@@ -67,17 +67,17 @@
 .article-actions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
 
-.like-container {
+.like-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.like-btn {
+.icon-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,6 +88,7 @@
   font-size: 12px;
   color: #777;
   line-height: 1;
+  margin-top: 3px;
 }
 
     .know-more { max-width: 1100px; margin: 48px auto 16px; padding: 0; text-align: center; }
@@ -166,14 +167,14 @@
     <i class="fa-solid fa-share-nodes"></i>
   </button>
 
-  <div class="like-container">
+  <div class="like-wrapper">
     <button class="icon-btn like-btn" onclick="handleLike(this)">
       <i class="fa-regular fa-thumbs-up"></i>
     </button>
     <span id="like-count">0</span>
   </div>
 
-  <button class="icon-btn" onclick="toggleDislike(this)">
+  <button class="icon-btn dislike-btn" onclick="toggleDislike(this)">
     <i class="fa-regular fa-thumbs-down"></i>
   </button>
 
@@ -261,14 +262,26 @@ async function loadLikes() {
   }
 }
 async function handleLike(btn) {
-  // Prevent double-clicking
-  if (btn.classList.contains("active")) return;
-  btn.classList.add("active");
+  const dislikeBtn = document.querySelector('.dislike-btn');
 
+  // Prevent double like
+  if (btn.classList.contains("active")) return;
+
+  // UI toggle (FILL ICON)
+  btn.classList.add("active");
+  btn.querySelector("i").classList.remove("fa-regular");
+  btn.querySelector("i").classList.add("fa-solid");
+
+  // Reset dislike
+  dislikeBtn.classList.remove("active");
+  dislikeBtn.querySelector("i").classList.remove("fa-solid");
+  dislikeBtn.querySelector("i").classList.add("fa-regular");
+
+  // Count logic
   let countEl = document.getElementById("like-count");
   let current = parseInt(countEl.innerText) || 0;
 
-  // Optimistic update — show immediately
+  // Instant update
   countEl.innerText = current + 1;
 
   const { data, error } = await supabase
@@ -279,10 +292,10 @@ async function handleLike(btn) {
     .single();
 
   if (error || !data) {
-    // Rollback on failure
+    // rollback
     countEl.innerText = current;
     btn.classList.remove("active");
-    console.error("Like update failed:", error);
+    console.error(error);
   } else {
     countEl.innerText = data.likes_count;
   }
