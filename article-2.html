@@ -291,15 +291,17 @@ async function handleLike(btn) {
     .select()
     .single();
 
-  if (error || !data) {
-    // rollback
-    countEl.innerText = current;
-    btn.classList.remove("active");
-    console.error(error);
-  } else {
-    countEl.innerText = data.likes_count;
-  }
+ if (error || !data) {
+  // rollback
+  countEl.innerText = current;
+
+  btn.classList.remove("active");
+  btn.querySelector("i").classList.remove("fa-solid");
+  btn.querySelector("i").classList.add("fa-regular");
+
+  console.error(error);
 }
+document.addEventListener("DOMContentLoaded", loadLikes);
 </script>
 
 </body>
