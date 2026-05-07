@@ -277,6 +277,69 @@
     }
   }
 </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabase = window.supabase.createClient(
+  "https://brhvefwrpmstpujslhei.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJyaHZlZndycG1zdHB1anNsaGVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczNjk1MTYsImV4cCI6MjA5Mjk0NTUxNn0.gFzNuf7K_BA8ORnGRrSitgp-pf0BbtHKUWCFC8RteME"
+);
+
+const ARTICLE_ID = "article-2"; // change per page
+
+async function loadLikes() {
+  const { data } = await supabase
+    .from("Likes")
+    .select("likes_count")
+    .eq("article_id", ARTICLE_ID)
+    .single();
+
+  if (data) {
+    document.getElementById("like-count").innerText = data.likes_count;
+  }
+}
+async function handleLike(btn) {
+  const dislikeBtn = document.querySelector('.dislike-btn');
+
+  // Prevent double like
+  if (btn.classList.contains("active")) return;
+
+  // UI toggle (FILL ICON)
+  btn.classList.add("active");
+  btn.querySelector("i").classList.remove("fa-regular");
+  btn.querySelector("i").classList.add("fa-solid");
+
+  // Reset dislike
+  dislikeBtn.classList.remove("active");
+  dislikeBtn.querySelector("i").classList.remove("fa-solid");
+  dislikeBtn.querySelector("i").classList.add("fa-regular");
+
+  // Count logic
+  let countEl = document.getElementById("like-count");
+  let current = parseInt(countEl.innerText) || 0;
+
+  // Instant update
+  countEl.innerText = current + 1;
+
+  const { data, error } = await supabase
+    .from("Likes")
+    .update({ likes_count: current + 1 })
+    .eq("article_id", ARTICLE_ID)
+    .select()
+    .single();
+
+ if (error || !data) {
+  // rollback
+  countEl.innerText = current;
+
+  btn.classList.remove("active");
+  btn.querySelector("i").classList.remove("fa-solid");
+  btn.querySelector("i").classList.add("fa-regular");
+
+  console.error(error);
+}
+document.addEventListener("DOMContentLoaded", loadLikes);
+</script>
 
 </body>
 </html>
