@@ -1,623 +1,586 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta property="og:title" content="Muse — Culture, Fashion & Feminism" />
-<meta property="og:description" content="An independent student-led magazine exploring culture, fashion, literary expression, and modern discourse." />
-<meta property="og:image" content="https://your-muse.github.io/banner.png" />
-<meta property="og:url" content="https://your-muse.github.io/" />
-<meta property="og:type" content="website" />
- <meta name="google-site-verification" content="8T0NKN3vPwkLz29fDBIbQwFLihcSdsxo5rWJfNhDpbw" />
+  <meta property="og:title" content="Muse — Culture, Fashion & Feminism" />
+  <meta property="og:description" content="An independent student-led magazine exploring culture, fashion, literary expression, and modern discourse." />
+  <meta property="og:image" content="https://your-muse.github.io/banner.png" />
+  <meta property="og:url" content="https://your-muse.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta name="google-site-verification" content="8T0NKN3vPwkLz29fDBIbQwFLihcSdsxo5rWJfNhDpbw" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MUSE</title>
-<link rel="canonical" href="https://your-muse.github.io/">
+  <link rel="canonical" href="https://your-muse.github.io/">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* ------SOCIAL LINKS------- */
-.social-links {
-  text-align: center;
-  margin: 20px auto;
-  padding: 10px 0;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.social-links a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #f6e9ec;
-  margin: 0 0.25cm;
-  border: 1px solid #ddd;
-  transition: all 0.35s ease;
-}
-
-.social-links a:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 12px rgba(0,0,0,0.15);
-}
-
-.social-links svg {
-  width: 20px;
-  height: 20px;
-  fill: #111;
-}
-
-.social-links img {
-  width: 20px;
-  height: 20px;
-  filter: brightness(0);
-}
-/* -----DIVIDER----- */
-.divider {
-  width: 0;
-  height: 1px;
-  background: #ddd;
-  margin: 30px auto 20px;
-  animation: growLine 1.2s ease forwards;
-}
-
-@keyframes growLine {
-  from { width: 0; }
-  to { width: 60%; }
-}
-.title-divider {
-  width: 60px;
-  height: 2px;
-  background: #111;
-  opacity: 0.4;
-  margin-bottom: 50px;
-}
-
-    .cover-strip {
-  display: block;
-  width: 100%;
-  background: #ffffff;
-  color: #000;
-  text-align: center;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  padding: 10px 0;
-  text-decoration: none;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.cover-strip:hover {
-  background: #f5f5f5;
-}
-
-    * {
-      box-sizing: border-box;
+    :root {
+      --cream: #f2e8e4;
+      --blush: #e8d0cc;
+      --rose: #b07070;
+      --dark: #1a1410;
+      --mid: #4a3f3a;
+      --border: #c8b8b2;
     }
 
     html, body {
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: "Playfair Display", Georgia, serif;
-      background: #f6e9ec;
-      color: #111;
-    }
-
-    /* ---------- BANNER ---------- */
-    header {
       width: 100%;
+      background: var(--cream);
+      color: var(--dark);
+      font-family: "EB Garamond", Georgia, serif;
+      overflow-x: hidden;
     }
 
-    header img {
+    /* ── BANNER ── */
+    .site-header { width: 100%; }
+    .site-header a { display: block; width: 100%; }
+    .site-header img { width: 100%; height: auto; display: block; }
+
+    /* ── NAV ── */
+    .nav-bar {
       width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ---------- SUBSCRIBE ---------- */
-    .subscribe-bar {
       display: flex;
-      justify-content: flex-end;
-      padding: 16px 24px;
+      align-items: stretch;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
     }
 
-    .subscribe-btn {
-      background: #000;
-      color: #f6e9ec;
+    .nav-link {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:first-child { border-left: 1px solid var(--border); }
+    .nav-link:hover { background: var(--blush); }
+
+    .nav-spacer { flex: 1; }
+
+    .nav-subscribe {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      background: var(--dark);
+      color: var(--cream);
       border: none;
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 600;
+      padding: 14px 28px;
       cursor: pointer;
+      border-left: 1px solid var(--border);
+      transition: background 0.25s;
     }
 
-    /* ---------- LAYOUT ---------- */
-    .homepage-layout {
-      max-width: 1100px;
-      margin: 24px auto 24px;
-      padding: 0 48px;
+    .nav-subscribe:hover { background: var(--rose); }
+
+    /* ── SECTION 1: 3-COL ROW ── */
+    .top-row {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr 1fr;
+      border-bottom: 1px solid var(--border);
+      min-height: 520px;
+    }
+
+    /* LEFT: cover preview */
+    .col-cover {
+      border-right: 1px solid var(--border);
       display: flex;
-      gap: 96px;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      gap: 14px;
     }
 
-    .intro-column {
-      flex: 1;
+    .cover-label {
+      font-family: "Playfair Display", serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      align-self: center;
     }
 
-    .content-column {
-      width: 360px;
-    }
-
-    /* ---------- INTRO ---------- */
-    .intro-column p {
-      margin: 0 0 16px;
-      font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .intro-line {
-      font-size: 22px;
-      margin-bottom: 24px;
-    }
-
-    .muse-word {
-      font-size: 48px;
-      font-weight: 700;
-    }
-
-    /* ---------- CATEGORIES ---------- */
-    .section-label {
-      font-size: 14px;
-      letter-spacing: 1px;
-      opacity: 0.6;
-      margin-bottom: 12px;
-    }
-
-    .entry {
-      margin-bottom: 40px;
-    }
-
-    .entry a {
-      font-size: 24px;
-      line-height: 1.3;
-      color: #111;
+    .cover-img-link {
+      display: block;
+      width: 160px;
       text-decoration: none;
     }
 
-    .entry a:hover {
-      text-decoration: underline;
+    .cover-img-link img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
     }
 
-    /* ---------- ARTICLE CARDS ---------- */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .cover-img-link:hover img { transform: scale(1.03); }
+
+    /* CENTRE: intro */
+    .col-intro {
+      padding: 52px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .intro-hi {
+      font-family: "Playfair Display", serif;
+      font-size: 52px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--rose);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .intro-title {
+      font-family: "Playfair Display", serif;
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 0.9;
+      color: var(--dark);
+      margin-bottom: 36px;
+    }
+
+    .intro-body p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+
+    .intro-body p:last-child { margin-bottom: 0; }
+
+    /* RIGHT: literary carousel */
+    .col-literary {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    .literary-label {
+      font-family: "Playfair Display", serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      padding: 15px 24px 13px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .carousel {
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .carousel-track {
+      display: flex;
+      width: 200%;
+      flex: 1;
+      transition: transform 0.55s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .carousel-slide {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 20px;
       gap: 14px;
+      text-decoration: none;
+      color: var(--dark);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .carousel-slide:hover { background: var(--blush); }
+
+    .carousel-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .carousel-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .carousel-title {
+      font-family: "Playfair Display", serif;
+      font-size: 15px;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .carousel-author {
+      font-size: 12px;
+      color: var(--rose);
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    .carousel-read {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--rose);
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+    }
+
+    .dot.active { background: var(--rose); }
+    /* ── SECTION 2: ARTICLES ── */
+    .articles-section {
+      width: 100%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .articles-header {
+      font-family: "Playfair Display", serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--rose);
+      padding: 15px 32px 13px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .articles-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
     }
 
     .article-card {
       display: block;
-      text-decoration: none !important;
-      color: #111;
-      cursor: pointer;
-      background: #fff;
-      transition: box-shadow 0.32s ease, transform 0.32s ease;
+      text-decoration: none;
+      color: var(--dark);
+      border-right: 1px solid var(--border);
+      transition: background 0.22s;
     }
 
-    .article-card:hover {
-      box-shadow: 0 6px 22px rgba(0,0,0,0.09);
-      transform: translateY(-3px);
-      text-decoration: none !important;
-    }
-
-    .article-card.hero {
-      grid-column: 1 / -1;
-    }
+    .article-card:last-child { border-right: none; }
+    .article-card:hover { background: var(--blush); }
 
     .article-img-wrap {
       width: 100%;
+      height: 220px;
       overflow: hidden;
-      background: #e8d8db;
     }
 
-    .article-card.hero .article-img-wrap { height: 195px; }
-    .article-card:not(.hero) .article-img-wrap { height: 135px; }
-
     .article-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform 0.55s cubic-bezier(0.22,1,0.36,1);
     }
 
-    .article-card:hover .article-img-wrap img {
-      transform: scale(1.06);
-    }
+    .article-card:hover .article-img-wrap img { transform: scale(1.04); }
 
-    .article-body {
-      padding: 11px 13px 13px;
-      border-top: 2px solid #f6e9ec;
-      transition: border-color 0.28s;
-    }
-
-    .article-card:hover .article-body {
-      border-color: #b07070;
-    }
+    .article-body { padding: 20px 28px 24px; }
 
     .article-num {
       font-size: 10px;
-      letter-spacing: 0.22em;
-      color: #b07070;
-      margin-bottom: 5px;
-      font-family: "Playfair Display", Georgia, serif;
+      letter-spacing: 0.3em;
+      color: var(--rose);
+      margin-bottom: 7px;
     }
 
     .article-card-title {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 14px;
-      line-height: 1.4;
-      color: #111;
-      font-weight: 400;
-    }
-
-    .article-card.hero .article-card-title {
+      font-family: "Playfair Display", serif;
       font-size: 18px;
+      line-height: 1.35;
+      font-weight: 400;
+      margin-bottom: 12px;
     }
 
     .article-read {
-      display: inline-block;
       font-size: 10px;
-      letter-spacing: 0.16em;
-      color: #b07070;
-      margin-top: 7px;
-      opacity: 1;
-      font-family: "Playfair Display", Georgia, serif;
+      letter-spacing: 0.22em;
+      color: var(--rose);
     }
 
-    /* ---------- LITERARY CARDS ---------- */
-    .literary-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .literary-card {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none !important;
-      color: #111;
-      background: #eedde1;
-      padding: 14px;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
-    }
-
-    .literary-card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-      transform: translateY(-2px);
-      text-decoration: none !important;
-    }
-
-    .literary-img-wrap {
-      width: 72px;
-      height: 72px;
-      flex-shrink: 0;
-      overflow: hidden;
-      background: #e8d8db;
-    }
-
-    .literary-img-wrap img {
+    /* ── FOOTER ── */
+    .site-footer {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.45s cubic-bezier(0.22,1,0.36,1);
-    }
-
-    .literary-card:hover .literary-img-wrap img {
-      transform: scale(1.08);
-    }
-
-    .literary-info {
       display: flex;
       flex-direction: column;
-      gap: 5px;
-    }
-
-    .literary-title-text {
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: 20px;
-      line-height: 1.25;
-      color: #111;
-    }
-
-    .literary-author-text {
-      font-size: 13px;
-      color: #646161;
-      font-family: "Playfair Display", Georgia, serif;
-    }
-
-    /* ---------- KNOW MORE ---------- */
-    .know-more {
-      max-width: 1100px;
-      margin: 48px auto 16px;
-      padding: 0;
-      text-align: center;
-    }
-
-    .know-more a {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: lowercase;
-      text-decoration: none;
-      color: #111;
-      opacity: 0.6;
-      font-weight: 500;
-      transition: opacity 0.3s ease;
-    }
-
-    .know-more a:hover { opacity: 1; }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 24px 0;
-      opacity: 0.6;
-      font-size: 14px;
-    }
-
-    /* ---------- MODAL ---------- */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: 32px 24px 28px;
+      gap: 14px;
+    }
+
+    .social-links { display: flex; gap: 14px; }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      transition: all 0.28s;
+    }
+
+    .social-links a:hover { background: var(--blush); border-color: var(--rose); }
+    .social-links svg { width: 16px; height: 16px; fill: var(--dark); }
+    .social-links img { width: 16px; height: 16px; filter: brightness(0); }
+
+    .footer-copy {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      color: var(--mid);
+      opacity: 0.55;
+    }
+
+    /* ── MODAL ── */
+    .modal {
+      position: fixed; inset: 0;
+      background: rgba(26,20,16,0.65);
+      display: none;
+      justify-content: center; align-items: center;
       z-index: 9999;
     }
 
     .modal-content {
-      background: #fff;
-      width: 90%;
-      max-width: 420px;
-      padding: 24px;
+      background: var(--cream);
+      width: 90%; max-width: 400px;
+      padding: 36px 32px;
       text-align: center;
+      border: 1px solid var(--border);
     }
 
-    .modal-content video {
-      width: 100%;
-      margin-bottom: 16px;
-    }
+    .modal-content video { width: 100%; margin-bottom: 20px; }
 
     .modal-title {
-      font-size: 20px;
-      margin-bottom: 16px;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin-bottom: 20px;
     }
 
     .modal-btn {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      font-size: 16px;
-      border: 1px solid #111;
-      background: #fff;
-      cursor: pointer;
+      width: 100%; padding: 13px; margin-bottom: 10px;
+      font-family: "EB Garamond", serif; font-size: 15px;
+      border: 1px solid var(--dark);
+      background: var(--dark); color: var(--cream);
+      cursor: pointer; transition: background 0.2s;
     }
+
+    .modal-btn:hover { background: var(--rose); border-color: var(--rose); }
 
     .modal-btn.continue {
-      border: none;
-      background: none;
-      font-size: 14px;
-      text-decoration: underline;
+      background: none; color: var(--mid); border: none;
+      font-size: 13px; text-decoration: underline;
     }
 
-    /* ---------- MOBILE ---------- */
-    @media (max-width: 900px) {
-      .homepage-layout {
-        flex-direction: column;
-        gap: 64px;
-        padding: 0 24px;
-      }
-
-      .content-column {
-        width: 100%;
-      }
-
-      .entry a {
-        font-size: 26px;
-      }
-
-      .articles-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .article-card.hero {
-        grid-column: 1;
-      }
-
-      .article-card.hero .article-img-wrap,
-      .article-card:not(.hero) .article-img-wrap {
-        height: 195px;
-      }
-
-      .article-card.hero .article-card-title {
-        font-size: 14px;
-      }
+    /* ── MOBILE ── */
+    @media (max-width: 860px) {
+      .top-row { grid-template-columns: 1fr; min-height: unset; }
+      .col-cover, .col-intro { border-right: none; border-bottom: 1px solid var(--border); }
+      .col-literary { border-bottom: 1px solid var(--border); }
+      .articles-row { grid-template-columns: 1fr; }
+      .article-card { border-right: none; border-bottom: 1px solid var(--border); }
+      .nav-link { padding: 12px 16px; font-size: 10px; }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <a href="index.html">
-    <img src="banner.png" alt="MUSE banner">
-  </a>
-
-  <a href="cover.html" class="cover-strip">
-  COVER
-</a>
-
+<!-- BANNER -->
+<header class="site-header">
+  <a href="index.html"><img src="banner.png" alt="MUSE banner"></a>
 </header>
 
-<div class="subscribe-bar">
-  <button class="subscribe-btn" onclick="openModal(event)">Subscribe Now</button>
-</div>
+<!-- NAV -->
+<nav class="nav-bar">
+  <a href="cover.html" class="nav-link">cover</a>
+  <a href="about.html" class="nav-link">about</a>
+  <a href="https://forms.gle/YOURFORMLINK" target="_blank" class="nav-link">submit</a>
+  <a href="#articles" class="nav-link">articles</a>
+  <div class="nav-spacer"></div>
+  <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
+</nav>
 
-<main class="homepage-layout">
+<!-- TOP 3-COL ROW -->
+<section class="top-row">
 
-  <!-- LEFT -->
-  <div class="intro-column">
-    <p class="intro-line">Hi <span class="muse-word">Muse</span>,</p>
-
-    <p>
-      This is the by product of countless late night conversations and many coffee dates.
-    </p>
-
-    <p>
-      The idea was to create something that sends a message, especially through something so close to a woman's heart- fashion.
-    </p>
-    <p>
-      We here at  MUSE, believe Art to have the deepest impact on the world — it quite literally shapes society. 
-    </p>
-      <p>
-        What is Earth without Art?<br>
-        A rock.
-    </p>
-
-    <p>
-      To emphasise this, our team has put together those ideas in this website which is now open for all to enjoy.
-    </p>
+  <!-- LEFT: cover preview -->
+  <div class="col-cover">
+    <span class="cover-label">Latest Cover</span>
+    <a href="cover.html" class="cover-img-link">
+      <img src="Retro.png" alt="Current MUSE cover">
+    </a>
   </div>
 
- <div class="content-column">
-
-  <!-- ARTICLES -->
-  <div class="entry">
-    <div class="section-label">Articles</div>
-    <div class="title-divider"></div>
-
-    <div class="articles-grid">
-
-      <a class="article-card hero" href="article.html" onclick="openModal(event, 'article')">
-        <div class="article-img-wrap">
-          <img src="article-1 pre.png" alt="Why Are We Emotionally Unavailable to TV Shows?">
-        </div>
-        <div class="article-body">
-          <div class="article-num">01</div>
-          <div class="article-card-title">Why Are We Emotionally Unavailable to TV Shows?</div>
-          <div class="article-read">Read →</div>
-        </div>
-      </a>
-
-      <a class="article-card" href="article-3.html" onclick="openModal(event, 'article-3')">
-        <div class="article-img-wrap">
-          <img src="article-3 pre.png" alt="Is Having A Boyfriend Embarrassing Now?">
-        </div>
-        <div class="article-body">
-          <div class="article-num">02</div>
-          <div class="article-card-title">Is Having A Boyfriend Embarrassing Now?</div>
-          <div class="article-read">Read →</div>
-        </div>
-      </a>
-
-      <a class="article-card" href="article-2.html" onclick="openModal(event, 'article-2')">
-        <div class="article-img-wrap">
-          <img src="article-2 pre.png" alt="A Manchild Isn't the Worst">
-        </div>
-        <div class="article-body">
-          <div class="article-num">03</div>
-          <div class="article-card-title">A Manchild Isn't the Worst</div>
-          <div class="article-read">Read →</div>
-        </div>
-      </a>
-
+  <!-- CENTRE: intro -->
+  <div class="col-intro">
+    <p class="intro-hi">Hi</p>
+    <h1 class="intro-title">Muse.</h1>
+    <div class="intro-body">
+      <p>This is the by product of countless late night conversations and many coffee dates.</p>
+      <p>The idea was to create something that sends a message, especially through something so close to a woman's heart — fashion.</p>
+      <p>We here at MUSE believe Art to have the deepest impact on the world. It quite literally shapes society.</p>
+      <p>What is Earth without Art?<br>A rock.</p>
+      <p>To emphasise this, our team has put together those ideas in this website which is now open for all to enjoy.</p>
     </div>
   </div>
 
-  <!-- LITERARY -->
-  <div class="entry">
-    <div class="section-label">Literary</div>
-    <div class="title-divider"></div>
+  <!-- RIGHT: literary carousel -->
+  <div class="col-literary">
+    <div class="literary-label">Literary</div>
 
-    <div class="literary-list">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track" id="carouselTrack">
 
-      <a href="literary-1.html" onclick="openModal(event, 'literary-1')" class="literary-card">
-        <div class="literary-img-wrap">
-          <img src="literary-1.png" alt="Cancer cover">
-        </div>
-        <div class="literary-info">
-          <span class="literary-title-text">Cancer</span>
-          <span class="literary-author-text">by Nivedita</span>
-        </div>
-      </a>
+        <a class="carousel-slide" href="literary-1.html" onclick="openModal(event,'literary-1')">
+          <img class="carousel-img" src="literary-1.png" alt="Cancer">
+          <div class="carousel-info">
+            <span class="carousel-title">Cancer</span>
+            <span class="carousel-author">by Nivedita</span>
+            <span class="carousel-read">Read →</span>
+          </div>
+        </a>
 
-      <a href="literary-2.html" onclick="openModal(event, 'literary-2')" class="literary-card">
-        <div class="literary-img-wrap">
-          <img src="literary-2.png" alt="Sputnik, My Sweetheart cover">
-        </div>
-        <div class="literary-info">
-          <span class="literary-title-text">Sputnik,<br>My Sweetheart</span>
-          <span class="literary-author-text">by Simantini</span>
-        </div>
-      </a>
+        <a class="carousel-slide" href="literary-2.html" onclick="openModal(event,'literary-2')">
+          <img class="carousel-img" src="literary-2.png" alt="Sputnik, My Sweetheart">
+          <div class="carousel-info">
+            <span class="carousel-title">Sputnik, My Sweetheart</span>
+            <span class="carousel-author">by Simantini</span>
+            <span class="carousel-read">Read →</span>
+          </div>
+        </a>
 
+      </div>
+    </div>
+
+    <div class="carousel-dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
     </div>
   </div>
 
-</div>
+</section>
 
-</main>
+<!-- ARTICLES SECTION -->
+<section class="articles-section" id="articles">
+  <div class="articles-header">Articles</div>
+  <div class="articles-row">
 
-<div class="know-more">
-  <a href="about.html">Know More</a>
-</div>
- <div class="divider"></div>
+    <a class="article-card" href="article.html" onclick="openModal(event,'article')">
+      <div class="article-img-wrap">
+        <img src="article-1 pre.png" alt="Why Are We Emotionally Unavailable to TV Shows?">
+      </div>
+      <div class="article-body">
+        <div class="article-num">01</div>
+        <div class="article-card-title">Why Are We Emotionally Unavailable to TV Shows?</div>
+        <div class="article-read">Read →</div>
+      </div>
+    </a>
+
+    <a class="article-card" href="article-3.html" onclick="openModal(event,'article-3')">
+      <div class="article-img-wrap">
+        <img src="article-3 pre.png" alt="Is Having A Boyfriend Embarrassing Now?">
+      </div>
+      <div class="article-body">
+        <div class="article-num">02</div>
+        <div class="article-card-title">Is Having A Boyfriend Embarrassing Now?</div>
+        <div class="article-read">Read →</div>
+      </div>
+    </a>
+
+    <a class="article-card" href="article-2.html" onclick="openModal(event,'article-2')">
+      <div class="article-img-wrap">
+        <img src="article-2 pre.png" alt="A Manchild Isn't the Worst">
+      </div>
+      <div class="article-body">
+        <div class="article-num">03</div>
+        <div class="article-card-title">A Manchild Isn't the Worst</div>
+        <div class="article-read">Read →</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
   <div class="social-links">
-  <a href="https://www.instagram.com/yourmusemagazine/" target="_blank" aria-label="Instagram">
-    <img src="instagram.svg" alt="Instagram">
-  </a>
-
-    <a href="https://www.linkedin.com/company/muse-editorial-project/about/?viewAsMember=true"
-     target="_blank"
-     aria-label="LinkedIn">
-
-    <svg width="20" height="20"
-         viewBox="0 0 24 24"
-         fill="currentColor"
-         xmlns="http://www.w3.org/2000/svg">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.266 2.37 4.266 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM6.814 20.452H3.86V9h2.954v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
-    </svg>
-
-  </a>
-
-</div>
-
-<footer>© MUSE</footer>
+    <a href="https://www.instagram.com/yourmusemagazine/" target="_blank" aria-label="Instagram">
+      <img src="instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://www.linkedin.com/company/muse-editorial-project/about/?viewAsMember=true" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.266 2.37 4.266 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM6.814 20.452H3.86V9h2.954v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
+      </svg>
+    </a>
+  </div>
+  <span class="footer-copy">© Muse</span>
+</footer>
 
 <!-- MODAL -->
 <div id="registerModal" class="modal">
   <div class="modal-content">
     <video src="register.mp4" autoplay muted loop playsinline></video>
-
-    <p class="modal-title">Register Now:</p>
-
-    <button class="modal-btn"
-      onclick="window.open('https://forms.gle/onyNcbw8WFsRd62L9','_blank')">
-      Subscribe with Email
-    </button>
-
-    <button class="modal-btn continue" onclick="continueWithoutRegistering()">
-      Continue Without Registering
-    </button>
+    <p class="modal-title">Register Now</p>
+    <button class="modal-btn" onclick="window.open('https://forms.gle/onyNcbw8WFsRd62L9','_blank')">Subscribe with Email</button>
+    <button class="modal-btn continue" onclick="continueWithoutRegistering()">Continue Without Registering</button>
   </div>
 </div>
 
 <script>
+  // ── Carousel ──
+  let current = 0;
+  const track = document.getElementById('carouselTrack');
+  const dots = document.querySelectorAll('.dot');
+
+  function goToSlide(index) {
+    current = index;
+    track.style.transform = `translateX(-${index * 50}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+
+  setInterval(() => goToSlide(current === 0 ? 1 : 0), 4000);
+
+  // ── Modal ──
   let modalTarget = null;
 
   function openModal(e, target) {
@@ -633,5 +596,5 @@
 </script>
 
 </body>
-
+</html>
 </html>
