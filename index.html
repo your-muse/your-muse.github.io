@@ -425,8 +425,11 @@
 
     /* ── MOBILE ── */
     @media (max-width: 860px) {
+      .col-cover{
+  display:none;
+}
       .top-row { grid-template-columns: 1fr; min-height: unset; }
-      .col-cover, .col-intro { border-right: none; border-bottom: 1px solid var(--border); }
+      .col-intro { border-right: none; border-bottom: 1px solid var(--border); }
       .col-literary { border-bottom: 1px solid var(--border); }
       .articles-row { grid-template-columns: 1fr; }
       .article-card { border-right: none; border-bottom: 1px solid var(--border); }
