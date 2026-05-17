@@ -425,43 +425,30 @@
 
     /* ── MOBILE ── */
     @media (max-width: 860px) {
-      .site-header img{
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-      @media (max-width: 860px){
+      .site-header img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
 
-  .nav{
-    display:flex;
-    overflow-x:auto;
-    white-space:nowrap;
-    scrollbar-width:none;
-    -webkit-overflow-scrolling:touch;
-    grid-template-columns:none !important;
-  }
+      .nav-bar {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
 
-  .nav::-webkit-scrollbar{
-    display:none;
-  }
+      .nav-bar::-webkit-scrollbar {
+        display: none;
+      }
 
-  .nav-left,
-  .nav-right{
-    display:flex;
-    flex-shrink:0;
-  }
+      .nav-link,
+      .nav-subscribe {
+        flex-shrink: 0;
+      }
 
-  .nav-center,
-  .nav a,
-  .nav button{
-    flex-shrink:0;
-  }
+      .nav-spacer { display: none; }
 
-}
-
-      .col-cover{
-  display:none;
-}
+      .col-cover { display: none; }
       .top-row { grid-template-columns: 1fr; min-height: unset; }
       .col-intro { border-right: none; border-bottom: 1px solid var(--border); }
       .col-literary { border-bottom: 1px solid var(--border); }
@@ -647,5 +634,4 @@
 </script>
 
 </body>
-</html>
 </html>
