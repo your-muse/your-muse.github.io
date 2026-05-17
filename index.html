@@ -430,6 +430,21 @@
       height: auto;
       display: block;
     }
+      .nav{
+  overflow-x:auto;
+  display:flex;
+  white-space:nowrap;
+  scrollbar-width:none;
+}
+
+.nav::-webkit-scrollbar{
+  display:none;
+}
+      .nav a,
+.nav button,
+.nav-center{
+  flex-shrink:0;
+}
 
       .col-cover{
   display:none;
