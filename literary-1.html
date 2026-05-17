@@ -303,6 +303,23 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
+   .nav-bar {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-link,
+      .nav-subscribe {
+        flex-shrink: 0;
+      }
+
+      .nav-spacer { display: none; }
+
   .piece-title { font-size: 32px; }
   .literary-text p { font-size: 17px; }
 }
