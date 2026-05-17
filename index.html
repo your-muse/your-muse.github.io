@@ -430,20 +430,33 @@
       height: auto;
       display: block;
     }
-      .nav{
-  overflow-x:auto;
-  display:flex;
-  white-space:nowrap;
-  scrollbar-width:none;
-}
+      @media (max-width: 860px){
 
-.nav::-webkit-scrollbar{
-  display:none;
-}
-      .nav a,
-.nav button,
-.nav-center{
-  flex-shrink:0;
+  .nav{
+    display:flex;
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    grid-template-columns:none !important;
+  }
+
+  .nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  .nav-left,
+  .nav-right{
+    display:flex;
+    flex-shrink:0;
+  }
+
+  .nav-center,
+  .nav a,
+  .nav button{
+    flex-shrink:0;
+  }
+
 }
 
       .col-cover{
