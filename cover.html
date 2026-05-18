@@ -13,6 +13,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      
+      --dark: #1a1410;
+      --border: #c8b8b2;
+     
+    }
         body {
       margin: 0;
       background-color: #f6e9ec;
@@ -26,7 +32,7 @@
       align-items: stretch;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      background: var(--cream);
+      background: #f6e9ec;
     }
 
 .nav-link {
@@ -34,7 +40,7 @@
       font-size: 11px;
       letter-spacing: 0.22em;
       text-transform: lowercase;
-      color: var(--dark);
+      color: #111;
       text-decoration: none;
       padding: 14px 28px;
       display: flex;
@@ -237,14 +243,7 @@
   <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
 </nav>
 
-  <div class="top-strip">
-    <a href="index.html" class="home-strip">HOME</a>
-  </div>
-
- <div class="subscribe-bar">
-  <button class="subscribe-btn" onclick="openModal(event)">Subscribe Now</button>
-</div>
-
+ 
   <div class="cover-container">
     <img src="Retro.png" alt="Muse Cover" class="cover-image">
 
