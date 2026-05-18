@@ -72,13 +72,20 @@ padding:14px 28px;
 cursor:pointer;
 border-left:1px solid var(--border);
 }
+.bg-video{
+  position:absolute;
+  inset:0;
 
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  z-index:0;
+}
 .gigs-desktop{
   min-height:calc(100vh - 120px);
 position:relative;
-background-image:url("gigs-bg.jpg");
-background-size:cover;
-background-position:center;
 overflow:hidden;
 }
 
@@ -195,7 +202,15 @@ flex-shrink:0;
 .nav-spacer{
 display:none;
 }
+.bg-video{
+  display:none;
+}
 
+.gigs-desktop{
+  background-image:url("mobile-bg.jpg");
+  background-size:cover;
+  background-position:center;
+}
 .gigs-desktop{
 height:100vh;
 }
@@ -228,6 +243,9 @@ width:90%;
 </nav>
 
 <main class="gigs-desktop">
+  <video autoplay muted loop playsinline class="bg-video">
+  <source src="gigs background.mp4" type="video/mp4">
+</video>
 
 <div class="gig-icon gig-1" onclick="openGig('poetry')">
 <img src="gig1.jpg" alt="">
