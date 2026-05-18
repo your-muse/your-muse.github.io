@@ -29,8 +29,7 @@
    :root {
       
       --dark: #1a1410;
-      --border: #c8b8b2;
-     
+       --border: #c8b8b2;     
     }
 
  
@@ -96,11 +95,79 @@ body {
     .nav-subscribe:hover { background: var(--rose); }
 
 
-/* PAGE CONTAINER */
+/* PAGE WRAPPER: two-col layout */
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 0;
+  align-items: start;
+}
+
+/* LEFT: main content */
 .page-container {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 20px 24px 60px;
+  padding: 40px 48px 60px 24px;
+  border-right: 1px solid #d8c8c4;
+}
+
+/* RIGHT: sidebar */
+.sidebar {
+  padding: 40px 0 60px;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar-section-label {
+  font-family: "Playfair Display", serif;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #b07070;
+  padding: 0 24px 13px;
+  border-bottom: 1px solid #d8c8c4;
+  display: block;
+  margin-bottom: 0;
+}
+
+.sidebar-card {
+  display: block;
+  text-decoration: none;
+  color: #1a1410;
+  padding: 20px 24px;
+  border-bottom: 1px solid #d8c8c4;
+  transition: background 0.2s;
+}
+
+.sidebar-card:hover { background: #edd8d4; }
+
+.sidebar-card img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.sidebar-card-label {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #b07070;
+  margin-bottom: 5px;
+}
+
+.sidebar-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.sidebar-card-read {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #b07070;
+  margin-top: 8px;
+  display: block;
 }
 
 /* SECTION LABEL */
@@ -309,22 +376,31 @@ footer {
 
 /* MOBILE */
 @media (max-width: 768px) {
-   .nav-bar {
-        overflow-x: auto;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-      }
+  .nav-bar {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
 
-      .nav-bar::-webkit-scrollbar {
-        display: none;
-      }
+  .nav-bar::-webkit-scrollbar { display: none; }
 
-      .nav-link,
-      .nav-subscribe {
-        flex-shrink: 0;
-      }
+  .nav-link,
+  .nav-subscribe { flex-shrink: 0; }
 
-      .nav-spacer { display: none; }
+  .nav-spacer { display: none; }
+
+  .page-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .page-container {
+    border-right: none;
+    padding: 28px 24px 40px;
+  }
+
+  .sidebar {
+    display: none;
+  }
 
   .piece-title { font-size: 32px; }
   .literary-text p { font-size: 17px; }
@@ -350,6 +426,8 @@ footer {
   <div class="nav-spacer"></div>
   <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
 </nav>
+
+<div class="page-wrapper">
 
 <main class="page-container">
 
@@ -406,6 +484,31 @@ footer {
   </div>
 
 </main>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <span class="sidebar-section-label">Read Now</span>
+
+  <a class="sidebar-card" href="article.html">
+    <img src="article-1 pre.png" alt="Why Are We Emotionally Unavailable to TV Shows?">
+    <div class="sidebar-card-label">Article</div>
+    <div class="sidebar-card-title">Why Are We Emotionally Unavailable to TV Shows?</div>
+    <span class="sidebar-card-read">Read →</span>
+  </a>
+
+  <span class="sidebar-section-label" style="margin-top:8px; display:block; padding-top:20px;">You Might Also Like</span>
+
+  <a class="sidebar-card" href="literary-2.html">
+    <img src="literary-2.png" alt="Sputnik, My Sweetheart">
+    <div class="sidebar-card-label">Literary</div>
+    <div class="sidebar-card-title">Sputnik, My Sweetheart</div>
+    <span class="sidebar-card-read">Read →</span>
+  </a>
+
+</aside>
+
+</div><!-- end page-wrapper -->
 
 <div class="know-more">
   <a href="about.html">Know More</a>
