@@ -101,12 +101,21 @@ body {
   grid-template-columns: 1fr 300px;
   gap: 0;
   align-items: start;
+  position: relative;
 }
 
-/* LEFT: main content */
+.page-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 300px;
+  width: 1px;
+  height: 100%;
+  background: #d8c8c4;
+}
+
 .page-container {
   padding: 40px 48px 60px 24px;
-  border-right: 1px solid #d8c8c4;
 }
 
 /* RIGHT: sidebar */
