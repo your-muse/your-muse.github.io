@@ -29,7 +29,7 @@
    :root {
       
       --dark: #1a1410;
-       --border: #c8b8b2;     
+     
     }
 
  
@@ -67,6 +67,7 @@ body {
       color: var(--dark);
       text-decoration: none;
       padding: 14px 28px;
+      border-right: 1px solid var(--border);
       display: flex;
       align-items: center;
       transition: background 0.2s;
@@ -101,21 +102,11 @@ body {
   grid-template-columns: 1fr 300px;
   gap: 0;
   align-items: start;
-  position: relative;
 }
 
-.page-wrapper::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 300px;
-  width: 1px;
-  height: 100%;
-  background: #d8c8c4;
-}
-
+/* LEFT: main content */
 .page-container {
-  padding: 40px 48px 60px 24px;
+  padding: 40px 48px 60px 36px;
 }
 
 /* RIGHT: sidebar */
@@ -123,6 +114,7 @@ body {
   padding: 40px 0 60px;
   position: sticky;
   top: 0;
+  border-left: 1px solid #d8c8c4;
 }
 
 .sidebar-section-label {
