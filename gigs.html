@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gigs | MUSE</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+--cream:#f6e9ec;
+--border:#d8c8c4;
+--rose:#b07070;
+--dark:#1a1410;
+}
+
+body{
+font-family:"Playfair Display", serif;
+background:#f6e9ec;
+overflow:hidden;
+}
+
+.hero img{
+width:100%;
+display:block;
+}
+
+.nav-bar{
+width:100%;
+display:flex;
+align-items:stretch;
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+background:var(--cream);
+}
+
+.nav-link{
+font-size:11px;
+letter-spacing:0.22em;
+text-transform:lowercase;
+color:var(--dark);
+text-decoration:none;
+padding:14px 28px;
+border-right:1px solid var(--border);
+display:flex;
+align-items:center;
+white-space:nowrap;
+}
+
+.nav-link:first-child{
+border-left:1px solid var(--border);
+}
+
+.nav-spacer{
+flex:1;
+}
+
+.nav-subscribe{
+font-size:11px;
+letter-spacing:0.22em;
+text-transform:lowercase;
+background:var(--dark);
+color:#f6e9ec;
+border:none;
+padding:14px 28px;
+cursor:pointer;
+border-left:1px solid var(--border);
+}
+
+.gigs-desktop{
+height:calc(100vh - 120px);
+position:relative;
+background-image:url("gigs-bg.jpg");
+background-size:cover;
+background-position:center;
+overflow:hidden;
+}
+
+.gigs-desktop::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.12);
+}
+
+.gig-icon{
+position:absolute;
+z-index:2;
+display:flex;
+flex-direction:column;
+align-items:center;
+cursor:pointer;
+transition:transform .25s ease;
+}
+
+.gig-icon:hover{
+transform:scale(1.06);
+}
+
+.gig-icon img{
+width:90px;
+height:90px;
+object-fit:cover;
+border:1px solid rgba(255,255,255,.3);
+}
+
+.gig-icon span{
+margin-top:8px;
+color:white;
+font-size:14px;
+text-shadow:0 2px 8px rgba(0,0,0,.5);
+}
+
+.gig-1{top:14%;left:12%;}
+.gig-2{top:44%;left:68%;}
+.gig-3{top:62%;left:30%;}
+.gig-4{top:26%;left:80%;}
+
+.gig-modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.45);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
+
+.gig-modal-box{
+width:430px;
+background:#f6e9ec;
+padding:34px;
+border:1px solid var(--border);
+position:relative;
+}
+
+.close-btn{
+position:absolute;
+top:14px;
+right:16px;
+border:none;
+background:none;
+font-size:28px;
+cursor:pointer;
+}
+
+.gig-modal-box h2{
+font-size:38px;
+margin-bottom:24px;
+}
+
+.gig-detail{
+margin-bottom:16px;
+line-height:1.6;
+}
+
+.gig-label{
+color:var(--rose);
+font-size:11px;
+letter-spacing:.24em;
+text-transform:uppercase;
+margin-bottom:3px;
+}
+
+.gig-value{
+font-size:20px;
+}
+
+@media(max-width:768px){
+
+body{
+overflow:auto;
+}
+
+.nav-bar{
+overflow-x:auto;
+scrollbar-width:none;
+}
+
+.nav-bar::-webkit-scrollbar{
+display:none;
+}
+
+.nav-link,
+.nav-subscribe{
+flex-shrink:0;
+}
+
+.nav-spacer{
+display:none;
+}
+
+.gigs-desktop{
+height:100vh;
+}
+
+.gig-icon img{
+width:72px;
+height:72px;
+}
+
+.gig-modal-box{
+width:90%;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+<a href="index.html">
+<img src="banner.png" alt="Muse Banner">
+</a>
+</header>
+
+<nav class="nav-bar">
+
+<a href="gigs.html" class="nav-link">gigs</a>
+<a href="cover.html" class="nav-link">cover</a>
+<a href="about.html" class="nav-link">about</a>
+<a href="article.html" class="nav-link">articles</a>
+
+<div class="nav-spacer"></div>
+
+<button class="nav-subscribe">subscribe</button>
+
+</nav>
+
+<main class="gigs-desktop">
+
+<div class="gig-icon gig-1" onclick="openGig('poetry')">
+<img src="gig1.jpg" alt="">
+<span>Poetry Night</span>
+</div>
+
+<div class="gig-icon gig-2" onclick="openGig('gallery')">
+<img src="gig2.jpg" alt="">
+<span>Gallery Show</span>
+</div>
+
+<div class="gig-icon gig-3" onclick="openGig('fashion')">
+<img src="gig3.jpg" alt="">
+<span>Fashion Pop-Up</span>
+</div>
+
+<div class="gig-icon gig-4" onclick="openGig('screening')">
+<img src="gig4.jpg" alt="">
+<span>Film Screening</span>
+</div>
+
+</main>
+
+<div class="gig-modal" id="gigModal">
+
+<div class="gig-modal-box">
+
+<button class="close-btn" onclick="closeGig()">×</button>
+
+<h2 id="gigTitle"></h2>
+
+<div class="gig-detail">
+<div class="gig-label">Date</div>
+<div class="gig-value" id="gigDate"></div>
+</div>
+
+<div class="gig-detail">
+<div class="gig-label">Time</div>
+<div class="gig-value" id="gigTime"></div>
+</div>
+
+<div class="gig-detail">
+<div class="gig-label">Location</div>
+<div class="gig-value" id="gigLocation"></div>
+</div>
+
+<div class="gig-detail">
+<div class="gig-label">About</div>
+<div class="gig-value" id="gigAbout"></div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+function openGig(type){
+
+const modal=document.getElementById("gigModal");
+modal.style.display="flex";
+
+if(type==="poetry"){
+document.getElementById("gigTitle").innerText="Poetry Night";
+document.getElementById("gigDate").innerText="14 August 2026";
+document.getElementById("gigTime").innerText="7:30 PM";
+document.getElementById("gigLocation").innerText="Delhi";
+document.getElementById("gigAbout").innerText="An intimate open mic evening featuring poetry and live readings.";
+}
+
+if(type==="gallery"){
+document.getElementById("gigTitle").innerText="Gallery Show";
+document.getElementById("gigDate").innerText="22 August 2026";
+document.getElementById("gigTime").innerText="5:00 PM";
+document.getElementById("gigLocation").innerText="Mumbai";
+document.getElementById("gigAbout").innerText="An independent visual arts showcase featuring young artists.";
+}
+
+if(type==="fashion"){
+document.getElementById("gigTitle").innerText="Fashion Pop-Up";
+document.getElementById("gigDate").innerText="2 September 2026";
+document.getElementById("gigTime").innerText="4:00 PM";
+document.getElementById("gigLocation").innerText="Bangalore";
+document.getElementById("gigAbout").innerText="A curated fashion showcase spotlighting emerging designers.";
+}
+
+if(type==="screening"){
+document.getElementById("gigTitle").innerText="Film Screening";
+document.getElementById("gigDate").innerText="18 September 2026";
+document.getElementById("gigTime").innerText="8:00 PM";
+document.getElementById("gigLocation").innerText="Online";
+document.getElementById("gigAbout").innerText="An online screening and discussion of independent short films.";
+}
+
+}
+
+function closeGig(){
+document.getElementById("gigModal").style.display="none";
+}
+
+window.onclick=function(event){
+const modal=document.getElementById("gigModal");
+if(event.target===modal){
+closeGig();
+}
+}
+
+</script>
+
+</body>
+</html>
