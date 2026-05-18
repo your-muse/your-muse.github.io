@@ -111,10 +111,14 @@ body {
 
 /* RIGHT: sidebar */
 .sidebar {
-  padding: 0 0 60px;
+  padding: 20px 0 60px;
   position: sticky;
   top: 0;
 }
+   .sidebar-inner{
+  border-left:1px solid #d8c8c4;
+}
+   
 
 .sidebar-section-label {
   font-family: "Playfair Display", serif;
@@ -124,10 +128,8 @@ body {
   color: #b07070;
   padding: 0 24px 13px;
   border-bottom: 1px solid #d8c8c4;
-  border-left: 1px solid #d8c8c4;
   display: block;
   margin-bottom: 0;
-  margin-top: 0;
 }
 
 .sidebar-card {
@@ -136,7 +138,6 @@ body {
   color: #1a1410;
   padding: 20px 24px;
   border-bottom: 1px solid #d8c8c4;
-  border-left: 1px solid #d8c8c4;
   transition: background 0.2s;
 }
 .sidebar-card:hover { background: #edd8d4; }
@@ -489,6 +490,7 @@ footer {
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
+   <aside class="sidebar inner">
 
   <span class="sidebar-section-label">Read Now</span>
 
@@ -507,6 +509,7 @@ footer {
     <div class="sidebar-card-title">Sputnik, My Sweetheart</div>
     <span class="sidebar-card-read">Read →</span>
   </a>
+   </aside>
 
 </aside>
 
