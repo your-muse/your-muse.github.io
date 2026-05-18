@@ -13,55 +13,56 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    .top-strip {
-      width: 100%;
-      background: #ffffff;
-      padding: 14px 48px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .home-strip {
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #111;
-      text-decoration: none;
-    }
-
-    .home-strip:hover { text-decoration: underline; }
-
-    body {
+        body {
       margin: 0;
       background-color: #f6e9ec;
       font-family: Georgia, "Times New Roman", serif;
       color: #111;
     }
 
-    .home-link {
-      position: fixed;
-      top: 18px;
-      left: 18px;
-      font-size: 14px;
-      text-decoration: none;
-      color: #555;
-      z-index: 50;
+   .nav-bar {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
     }
 
-    .home-link:hover { text-decoration: underline; }
+.nav-link {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
 
-    .subscribe-bar { display: flex; justify-content: flex-end; padding: 16px 24px; }
+    .nav-link:first-child { border-left: 1px solid var(--border); }
+    .nav-link:hover { background: var(--blush); }
 
-    .subscribe-btn {
-      background: #000000;
+    .nav-spacer { flex: 1; }
+
+    .nav-subscribe {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      background: var(--dark);
       color: #f6e9ec;
       border: none;
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 600;
+      padding: 14px 28px;
       cursor: pointer;
+      border-left: 1px solid var(--border);
+      transition: background 0.25s;
     }
 
+    .nav-subscribe:hover { background: var(--rose); }
     .cover-container {
       max-width: 1100px;
       margin: 120px auto 48px;
@@ -205,12 +206,36 @@
     }
 
     @media (max-width: 768px) {
+      .nav-bar {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-bar::-webkit-scrollbar { display: none; }
+
+  .nav-link,
+  .nav-subscribe { flex-shrink: 0; }
+
+  .nav-spacer { display: none; }
+
       .cover-container { margin-top: 100px; }
     }
   </style>
 </head>
 
 <body>
+ <nav class="nav-bar">
+  <a href="index.html" class="nav-link"> home </a>
+  <a href="gigs.html" class="nav-link"> gigs </a>
+  <a href="cover.html" class="nav-link">cover</a>
+   <a href="#articles" class="nav-link">articles</a>
+  <a href="about.html" class="nav-link">about</a>
+  <a href="https://forms.gle/RhKZ1h6Q5Bbgx42w5" target="_blank" class="nav-link">submit</a>  
+  <a href="https://forms.gle/szcetLAXcRtfhGK68" target="_blank" class="nav-link">join us</a>
+  <div class="nav-spacer"></div>
+  <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
+</nav>
 
   <div class="top-strip">
     <a href="index.html" class="home-strip">HOME</a>
