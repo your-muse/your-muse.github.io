@@ -22,7 +22,8 @@
 body{
 font-family:"Playfair Display", serif;
 background:#f6e9ec;
-overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 
 .hero img{
@@ -73,7 +74,7 @@ border-left:1px solid var(--border);
 }
 
 .gigs-desktop{
-height:calc(100vh - 120px);
+  min-height:calc(100vh - 120px);
 position:relative;
 background-image:url("gigs-bg.jpg");
 background-size:cover;
