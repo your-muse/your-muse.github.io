@@ -120,18 +120,50 @@
       text-decoration: underline; cursor: pointer;
     }
 
-    /*---subscribe---*/
-    .subscribe-bar { display: flex; justify-content: flex-end; padding: 16px 24px; }
+    /* ── NAV ── */
+    .nav-bar {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+    }
 
-    .subscribe-btn {
-      background: #000000;
+    .nav-link {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:first-child { border-left: 1px solid var(--border); }
+    .nav-link:hover { background: var(--blush); }
+
+    .nav-spacer { flex: 1; }
+
+    .nav-subscribe {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      background: var(--dark);
       color: #f6e9ec;
       border: none;
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 600;
+      padding: 14px 28px;
       cursor: pointer;
+      border-left: 1px solid var(--border);
+      transition: background 0.25s;
     }
+
+    .nav-subscribe:hover { background: var(--rose); }
 
     /*-- BANNER / HOME --*/
     .hero { width: 100vw; margin: 0; padding: 0; overflow: hidden; }
