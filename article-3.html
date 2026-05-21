@@ -201,6 +201,21 @@
       opacity: 0.6;
     }
 
+    @media (max-width: 860px;){
+         .nav-bar {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-bar::-webkit-scrollbar { display: none; }
+
+  .nav-link,
+  .nav-subscribe { flex-shrink: 0; }
+
+  .nav-spacer { display: none; }
+    }
+
   </style>
 </head>
 <body>
