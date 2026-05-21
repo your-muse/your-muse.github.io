@@ -110,17 +110,52 @@
       text-decoration: underline; cursor: pointer;
     }
 
-    .subscribe-bar { display: flex; justify-content: flex-end; padding: 16px 24px; }
-
-    .subscribe-btn {
-      background: #000000;
-      color: #f6e9ec;
-      border: none;
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
+   
+    /* ── NAV ── */
+    .nav-bar {
+      width: 100%;
+      display: flex;
+      align-items: stretch;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
     }
+
+    .nav-link {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      color: var(--dark);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-link:first-child { border-left: 1px solid var(--border); }
+    .nav-link:hover { background: var(--blush); }
+
+    .nav-spacer { flex: 1; }
+
+    .nav-subscribe {
+      font-family: "Playfair Display", serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: lowercase;
+      background: var(--dark);
+      color: var(--cream);
+      border: none;
+      padding: 14px 28px;
+      cursor: pointer;
+      border-left: 1px solid var(--border);
+      transition: background 0.25s;
+    }
+
+    .nav-subscribe:hover { background: var(--rose); }
 
     .hero { width: 100vw; margin: 0; padding: 0; overflow: hidden; }
     .hero img { width: 100vw; height: auto; display: block; }
