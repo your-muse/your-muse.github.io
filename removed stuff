@@ -35,3 +35,21 @@ ARTICLE-3
       <i class="fa-regular fa-thumbs-down"></i>
     </button>
   </div>
+
+ARTICLE.html
+<img src="article-1.png" class="slice" alt="">
+  <img src="article-1.2.png" class="slice" alt="">
+
+  <!-- SHARE / LIKE / DISLIKE -->
+  <div class="article-actions">
+    <button class="icon-btn" onclick="sharePost()">
+      <i class="fa-solid fa-share-nodes"></i>
+    </button>
+    <button class="icon-btn" onclick="toggleLike(this)">
+      <i class="fa-regular fa-thumbs-up"></i>
+    </button>
+    <button class="icon-btn" onclick="toggleDislike(this)">
+      <i class="fa-regular fa-thumbs-down"></i>
+    </button>
+  </div>
+</main>
