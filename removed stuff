@@ -53,3 +53,6 @@ ARTICLE.html
     </button>
   </div>
 </main>
+
+INDEX.HTML
+<p>And remember <a class="intro-hi">MUSE</a> is Home.</p>
