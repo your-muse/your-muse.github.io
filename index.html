@@ -34,50 +34,51 @@
       overflow-x: hidden;
     }
 
+    /* ── FIXED TOP BLOCK (banner + nav travel together, always in sync) ── */
+    .top-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 900;
+      background: var(--cream);
+    }
+
     /* ── BANNER ── */
     .site-header {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 46px 24px 34px;
-      background: var(--cream);
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 900;
-      transition: padding 0.55s cubic-bezier(0.22,1,0.36,1);
+      padding: 22px 24px 16px;
+      transition: padding 0.5s cubic-bezier(0.22,1,0.36,1);
     }
 
     .site-header a {
       display: block;
-      transition: width 0.55s cubic-bezier(0.22,1,0.36,1);
+      transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
     }
 
     .site-header img {
-      width: 320px;
-      max-width: 60vw;
+      width: 190px;
+      max-width: 42vw;
       height: auto;
       display: block;
       /* image itself has a transparent background, so it dissolves
          straight into the page instead of sitting on a picture edge */
-      transition: width 0.55s cubic-bezier(0.22,1,0.36,1);
+      transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
     }
 
-    /* scrolled state: slides out of the centre, shrinks, and stays put */
+    /* scrolled state: slides out of the centre, shrinks, and stays put —
+       nav-bar sits right below it inside the same fixed block, so it can
+       never be covered regardless of how the banner is animating */
     .site-header.scrolled {
       justify-content: flex-start;
-      padding: 10px 28px;
+      padding: 8px 28px;
     }
 
     .site-header.scrolled img {
-      width: 92px;
-    }
-
-    /* pushes the rest of the page down so the fixed header never overlaps it;
-       height is kept in sync with the header via JS */
-    .nav-bar {
-      transition: margin-top 0.55s cubic-bezier(0.22,1,0.36,1);
+      width: 68px;
     }
 
     /* ── NAV ── */
@@ -486,10 +487,10 @@
 
     /* ── MOBILE ── */
     @media (max-width: 860px) {
-      .site-header { padding: 32px 20px 24px; }
-      .site-header img { width: 220px; max-width: 66vw; }
-      .site-header.scrolled { padding: 8px 18px; }
-      .site-header.scrolled img { width: 74px; }
+      .site-header { padding: 16px 20px 12px; }
+      .site-header img { width: 140px; max-width: 48vw; }
+      .site-header.scrolled { padding: 6px 18px; }
+      .site-header.scrolled img { width: 56px; }
 
       .nav-bar {
         overflow-x: auto;
@@ -521,22 +522,27 @@
 
 <body>
 
-<!-- BANNER -->
-<header class="site-header" id="siteHeader">
-  <a href="index.html"><img src="muse_banner_cutout.png" alt="MUSE banner"></a>
-</header>
+<!-- FIXED TOP BLOCK: banner + nav travel together, always in sync -->
+<div class="top-fixed" id="topFixed">
+  <header class="site-header" id="siteHeader">
+    <a href="index.html"><img src="muse_banner_cutout.png" alt="MUSE banner"></a>
+  </header>
 
-<!-- NAV -->
-<nav class="nav-bar">
-  <a href="gigs.html" class="nav-link"> gigs </a>
-  <a href="cover.html" class="nav-link">cover</a>
-   <a href="#articles" class="nav-link">articles</a>
-  <a href="about.html" class="nav-link">about</a>
-  <a href="https://forms.gle/RhKZ1h6Q5Bbgx42w5" target="_blank" class="nav-link">submit</a>  
-  <a href="https://forms.gle/szcetLAXcRtfhGK68" target="_blank" class="nav-link">join us</a>
-  <div class="nav-spacer"></div>
-  <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
-</nav>
+  <!-- NAV -->
+  <nav class="nav-bar">
+    <a href="gigs.html" class="nav-link"> gigs </a>
+    <a href="cover.html" class="nav-link">cover</a>
+     <a href="#articles" class="nav-link">articles</a>
+    <a href="about.html" class="nav-link">about</a>
+    <a href="https://forms.gle/RhKZ1h6Q5Bbgx42w5" target="_blank" class="nav-link">submit</a>  
+    <a href="https://forms.gle/szcetLAXcRtfhGK68" target="_blank" class="nav-link">join us</a>
+    <div class="nav-spacer"></div>
+    <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
+  </nav>
+</div>
+
+<!-- spacer so page content clears the fixed block above; height kept in sync via JS -->
+<div id="topFixedSpacer"></div>
 
 <!-- TOP 3-COL ROW -->
 <section class="top-row">
@@ -635,7 +641,7 @@
 
   </div>
 </section>
-  
+
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="social-links">
@@ -663,13 +669,14 @@
 
 <script>
   // ── Banner: centred on load; on scroll it shrinks and moves to the
-  // side, staying fixed there until the user scrolls back to the top ──
+  // side (nav-bar rides along inside the same fixed block, so it can
+  // never be covered), staying put until the user scrolls back to top ──
   const siteHeader = document.getElementById('siteHeader');
-  const navBar = document.querySelector('.nav-bar');
+  const topFixed = document.getElementById('topFixed');
+  const topFixedSpacer = document.getElementById('topFixedSpacer');
 
-  function syncHeaderOffset() {
-    // keep the page content clear of the fixed header at its current size
-    navBar.style.marginTop = siteHeader.offsetHeight + 'px';
+  function syncSpacer() {
+    topFixedSpacer.style.height = topFixed.offsetHeight + 'px';
   }
 
   function updateHeaderState() {
@@ -678,13 +685,25 @@
     } else {
       siteHeader.classList.remove('scrolled');
     }
-    syncHeaderOffset();
+    syncSpacer();
   }
 
   window.addEventListener('scroll', updateHeaderState, { passive: true });
-  window.addEventListener('resize', syncHeaderOffset);
-  window.addEventListener('load', syncHeaderOffset);
+  window.addEventListener('resize', syncSpacer);
+  window.addEventListener('load', syncSpacer);
   updateHeaderState();
+
+  // keep the spacer glued to the fixed block's height throughout the
+  // shrink/grow transition, not just at the start and end of it
+  topFixed.addEventListener('transitionrun', () => {
+    const duration = 550;
+    const start = performance.now();
+    function tick(now) {
+      syncSpacer();
+      if (now - start < duration) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
 
   // ── Carousel ──
   let current = 0;
