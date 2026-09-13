@@ -180,7 +180,29 @@
     }
 
     /* MOBILE */
-    @media (max-width: 768px) {
+     @media (max-width: 860px) {
+      .site-header { padding: 16px 20px 12px; }
+      .site-header img { width: 140px; max-width: 48vw; }
+      .site-header.scrolled { padding: 6px 18px; }
+      .site-header.scrolled img { width: 56px; }
+
+      .nav-bar {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-bar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-link,
+      .nav-subscribe {
+        flex-shrink: 0;
+      }
+
+      .nav-spacer { display: none; }
+       {
       .about-wrapper {
         grid-template-columns: 1fr;
       }
@@ -196,23 +218,29 @@
 
 <body>
 
-  <!-- BANNER -->
-  <header class="hero">
-  <a href="index.html">
-    <img src="muse_banner_cutout.png" alt="Muse banner">
-  </a>
-</header>
-  <!-- NAV -->
-<nav class="nav-bar">
-  <a href="gigs.html" class="nav-link"> gigs </a>
-  <a href="cover.html" class="nav-link">cover</a>
-   <a href="#articles" class="nav-link">articles</a>
-  <a href="https://forms.gle/RhKZ1h6Q5Bbgx42w5" target="_blank" class="nav-link">submit</a>  
-  <a href="https://forms.gle/szcetLAXcRtfhGK68" target="_blank" class="nav-link">join us</a>
-  <div class="nav-spacer"></div>
-  <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
-</nav>
+  <!-- FIXED TOP BLOCK: banner + nav travel together, always in sync -->
+<div class="top-fixed" id="topFixed">
+  <header class="site-header" id="siteHeader">
+    <a href="index.html"><img src="muse_banner_cutout.png" alt="MUSE banner"></a>
+  </header>
 
+  <!-- NAV -->
+  <nav class="nav-bar">
+    <a href="indexhtml" class="nav-link">home</a>
+    <a href="gigs.html" class="nav-link"> gigs </a>
+    <a href="cover.html" class="nav-link">cover</a>
+     <a href="#articles" class="nav-link">articles</a>
+    <a href="indexhtml" class="nav-link">home</a>
+    <a href="https://forms.gle/RhKZ1h6Q5Bbgx42w5" target="_blank" class="nav-link">submit</a>  
+    <a href="https://forms.gle/szcetLAXcRtfhGK68" target="_blank" class="nav-link">join us</a>
+    <div class="nav-spacer"></div>
+    <button class="nav-subscribe" onclick="openModal(event)">subscribe</button>
+  </nav>
+</div>
+
+<!-- spacer so page content clears the fixed block above; height kept in sync via JS -->
+<div id="topFixedSpacer"></div>
+  
   <!-- CONTENT -->
   <section class="about-wrapper">
  
