@@ -11,37 +11,71 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      
+      --cream: #ffffff;
+      --blush: #e8d0cc;
+      --rose: #b07070;
       --dark: #1a1410;
+      --mid: #4a3f3a;
       --border: #c8b8b2;
-     
     }
 
-   body {
-  font-family: "Playfair Display", Georgia, serif;
-  background: #f6e9ec;
-  color: #111;
-}
-
-
-    /* BANNER */
-    .hero {
-      width: 100vw;
-      overflow: hidden;
-    }
-
-    .hero img {
+    html, body {
       width: 100%;
-      display: block;
+      background: var(--cream);
+      color: var(--dark);
+      font-family: "EB Garamond", Georgia, serif;
+      overflow-x: hidden;
     }
-    .hero a {
-  display: block;
-}
+
+       /* ── FIXED TOP BLOCK (banner + nav travel together, always in sync) ── */
+    .top-fixed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 900;
+      background: var(--cream);
+    }
+
+    /* ── BANNER ── */
+    .site-header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 22px 24px 16px;
+      transition: padding 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .site-header a {
+      display: block;
+      transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .site-header img {
+      width: 190px;
+      max-width: 42vw;
+      height: auto;
+      display: block;
+      /* image itself has a transparent background, so it dissolves
+         straight into the page instead of sitting on a picture edge */
+      transition: width 0.5s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    /* scrolled state: slides out of the centre, shrinks, and stays put —
+       nav-bar sits right below it inside the same fixed block, so it can
+       never be covered regardless of how the banner is animating */
+    .site-header.scrolled {
+      justify-content: flex-start;
+      padding: 8px 28px;
+    }
+
+    .site-header.scrolled img {
+      width: 68px;
+    }
 /* ── NAV ── */
     .nav-bar {
       width: 100%;
@@ -165,7 +199,7 @@
   <!-- BANNER -->
   <header class="hero">
   <a href="index.html">
-    <img src="banner.png" alt="Muse banner">
+    <img src="banner(1).png" alt="Muse banner">
   </a>
 </header>
   <!-- NAV -->
